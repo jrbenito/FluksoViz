@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, LoopExampleActivity!</string>
+    <string name="app_name">Flukso Viz</string>
+    <string name="set_preferences">Prefernces for FuksoViz</string>
+
+     <string-array name="sensor_number">
+	        <item>1 sensor</item>
+	        <item>2 sensors sum 1+2</item>
+	        <item>2 sensors diff 1-2</item>
+	        <item>3 sensors sum 1+2+3</item>
+	        
+    </string-array>
+    <string-array name="sensor_number_val">
+	        <item>1</item>
+	        <item>2</item>
+	        <item>4</item>
+	        <item>3</item>
+	    </string-array>
+	    
+     <string-array name="api_server">
+	        <item>flukso.net</item>
+	        <item>api.mysmartgrid.de:8443</item>
+	        
+    </string-array>
+    <string-array name="api_server_val">
+	        <item>178.79.177.6</item>
+	        <item>api.mysmartgrid.de:8443</item>
+	        
+    </string-array>
+    
+    
+    
+</resources>

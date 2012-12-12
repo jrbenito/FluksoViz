@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+		<RelativeLayout
+		    xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/RelativeLayout01" 
+		    android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content">
+		    	<TextView
+		            android:id="@+id/textView01"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentLeft="true"
+		            android:text="General debug" />
+		    
+		
+		        <TextView
+		            android:id="@+id/textView2"
+		            android:layout_width="wrap_content"
+		            android:layout_height="wrap_content"
+		            android:layout_alignParentRight="true"
+		            android:text="2011-11-09 12:00" />
+		</RelativeLayout>
+
+		<RelativeLayout
+		    xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:id="@+id/RelativeLayout02"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_marginTop="-40dp"
+		    android:gravity="center" >
+		
+		       <TextView
+	    		    android:id="@+id/textView1"
+	    		    android:layout_width="wrap_content"
+	    		    android:layout_height="wrap_content"
+	    		    android:text="1234"
+	    		    android:textColor="#FFFFFF"
+	    		    android:textSize="180sp" />
+
+		       <TextView
+		           android:id="@+id/textView4"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:layout_alignBaseline="@+id/textView1"
+		           android:layout_alignBottom="@+id/textView1"
+		           android:layout_toRightOf="@+id/textView1"
+		           android:text=" W"
+		           android:textColor="#FFFFFF"
+		           android:textSize="40sp" />
+		       
+		       <TextView
+		             android:id="@+id/textView_delta"
+		             android:layout_width="wrap_content"
+		             android:layout_height="wrap_content"
+		             android:layout_alignRight="@+id/textView4"
+		             android:layout_centerVertical="true"
+		             android:text="d"
+		             android:textColor="#FFFFFF"
+		             android:textSize="30sp" />
+
+		       <TextView
+		           android:id="@+id/textView_p3"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:layout_alignParentTop="true"
+		           android:layout_marginTop="52dp"
+		           android:layout_alignRight="@+id/textView_delta"
+		           android:textColor="#000000"
+		           android:text="0w"
+		           android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	           <TextView
+	               android:id="@+id/textView_p2"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:layout_alignRight="@+id/textView_p3"
+	               android:layout_below="@+id/textView_p3"
+	               android:textColor="#000000"
+	               android:text="0w"
+	               android:textAppearance="?android:attr/textAppearanceSmall" />
+	           
+	           <TextView
+	               android:id="@+id/textView_p1"
+	               android:layout_width="wrap_content"
+	               android:layout_height="wrap_content"
+	               android:layout_alignRight="@+id/textView_p2"
+	               android:layout_below="@+id/textView_p2"
+	               android:textColor="#000000"
+	               android:text="0w"
+	               android:textAppearance="?android:attr/textAppearanceSmall" />
+	           
+	           
+	           
+	           
+	           
+
+		</RelativeLayout>
+		    
+    	
+    
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/Plot1"
+        android:layout_width="fill_parent"
+        android:layout_height="240dp"
+        android:layout_marginLeft="-14px"
+        android:layout_marginRight="-7px"
+        android:layout_marginTop="-8px"
+        title="      Power (W) - last minute - 3 phases       " />
+    
+        <com.androidplot.xy.XYPlot
+        android:id="@+id/Plot2"
+        android:layout_width="fill_parent"
+        android:layout_height="240dp"
+        android:layout_marginLeft="-14px"
+        android:layout_marginRight="-7px"
+        android:layout_marginTop="0px"
+        title="Power (W) - last day - connecting to server api..." />
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:shrinkColumns="*"
+            android:stretchColumns="0,1,2,3,4" >
+
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="-7sp">
+
+                <TextView
+                    android:id="@+id/textView_r1"
+                    android:text="Today"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+                    <TableLayout
+			            android:id="@+id/tableLayout2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:shrinkColumns="*" >
+			            
+	                 <TableRow
+	                     android:id="@+id/tableRow1"
+	                     android:layout_width="wrap_content"
+	                     android:layout_height="wrap_content"
+	                     android:gravity="right" >
+
+		                <TextView
+		                    android:id="@+id/TextView_r2"
+		                    android:gravity="right"
+		                    android:text="20.00"
+		                    android:textSize="38dp" android:textStyle="bold"/>
+		                 <TextView
+		                    android:id="@+id/TextView_r3"
+		                    android:text=" kWh"
+		                    android:textSize="14dp" />
+		               </TableRow>
+
+		                <TableRow
+		                    android:id="@+id/tableRow1"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_marginTop="-7sp"
+		                    android:gravity="right" >
+
+		                <TextView
+		                    android:id="@+id/TextView_r22"
+		                    android:gravity="right"
+		                    android:text="0.00"
+		                    android:textSize="14dp" />
+		                 <TextView
+		                    android:id="@+id/TextView_r33"
+		                    android:text=" W"
+		                    android:textSize="14dp" />
+		               </TableRow>
+					</TableLayout>
+               
+
+                <TextView
+                    android:id="@+id/TextView_r4"
+                    android:gravity="right"
+                    android:text="0.00"
+                    android:textSize="38dp" android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/TextView_r5"
+                    android:text=" PLN"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/TextView_r6"
+                    android:gravity="right"
+                    android:text="20%"
+                    android:textColor="#ff0000"
+                    android:textSize="30dp" />
+
+                <ImageView
+                    android:id="@+id/arrow_image1"
+                    android:layout_width="15dp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="right|top"
+                    android:layout_marginTop="14dp"
+                    android:src="@drawable/red_arrow" />
+
+		        </TableRow>
+
+		        <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="-3sp">
+
+                <TextView
+                    android:id="@+id/textView_rd1"
+                    android:text="Week"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+
+                 <TableLayout
+			            android:id="@+id/tableLayout2"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:shrinkColumns="*" >
+
+	                 <TableRow
+	                     android:id="@+id/tableRow1"
+	                     android:layout_width="wrap_content"
+	                     android:layout_height="wrap_content"
+	                     android:gravity="right" >
+		                 
+		               <TextView
+		                    android:id="@+id/TextView_rd2"
+		                    android:gravity="right"
+		                    android:text="123"
+		                    android:textSize="38dp" android:textStyle="bold"/>
+
+                		<TextView
+		                    android:id="@+id/TextView_rd3"
+		                    android:text=" kWh"
+		                    android:textSize="14dp" />
+		             </TableRow>
+
+		             <TableRow
+		                 android:id="@+id/tableRow1"
+		                 android:layout_width="wrap_content"
+		                 android:layout_height="wrap_content"
+		                 android:layout_marginTop="-7sp"
+		                 android:gravity="right" >
+
+					      <TextView
+		                    android:id="@+id/TextView_rd22"
+		                    android:gravity="right"
+		                    android:text="0.00"
+		                    android:textSize="14dp" />
+ 			              <TextView
+		                    android:id="@+id/TextView_rd33"
+		                    android:text=" W"
+		                    android:textSize="14dp" />
+		               </TableRow>
+					</TableLayout>
+                
+                
+                
+              
+
+                <TextView
+                    android:id="@+id/TextView_rd4"
+                    android:gravity="right"
+                    android:text="0.00"
+                    android:textSize="38dp" android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/TextView_rd5"
+                    android:text=" PLN"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/TextView_rd6"
+                    android:gravity="right"
+                    android:text="10%"
+                    android:textColor="#00ff00"
+                    android:textSize="30dp" />
+
+                <ImageView
+                    android:id="@+id/arrow_image2"
+                    android:layout_width="15dp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="right|top"
+                    android:src="@drawable/green_arrow" android:layout_marginTop="14dp"/>
+		        </TableRow>
+
+		        <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:layout_marginTop="-3sp">
+
+                <TextView
+                    android:id="@+id/textView_rt1"
+                    android:text="Month"
+                    android:textColor="#FFFFFF"
+                    android:textSize="30dp" />
+					<TableLayout
+			            android:id="@+id/tableLayout2"
+			            android:layout_width="fill_parent"
+			            android:layout_height="wrap_content"
+			            android:shrinkColumns="*" >
+
+	                 <TableRow
+	                     android:id="@+id/tableRow1"
+	                     android:layout_width="wrap_content"
+	                     android:layout_height="wrap_content"
+	                     android:gravity="right" >
+
+		                <TextView
+		                    android:id="@+id/TextView_rt2"
+		                    android:gravity="right"
+		                    android:text="0.0"
+		                    android:textSize="38dp" android:textStyle="bold"/>
+
+              		 	<TextView
+		                    android:id="@+id/TextView_rt3"
+		                    android:text=" kWh"
+		                    android:textSize="14dp" />
+		             </TableRow>
+
+		             <TableRow
+		                 android:id="@+id/tableRow1"
+		                 android:layout_width="wrap_content"
+		                 android:layout_height="wrap_content"
+		                 android:layout_marginTop="-7sp"
+		                 android:gravity="right" >
+
+					      <TextView
+		                    android:id="@+id/TextView_rt22"
+		                    android:gravity="right"
+		                    android:text="0.00"
+		                    android:textSize="14dp" />
+ 			              <TextView
+		                    android:id="@+id/TextView_rt33"
+		                    android:text=" W"
+		                    android:textSize="14dp" />
+		               </TableRow>
+					</TableLayout>
+               
+
+                <TextView
+                    android:id="@+id/TextView_rt4"
+                    android:gravity="right"
+                    android:text="0.0"
+                    android:textSize="38dp" android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/TextView_rt5"
+                    android:text=" PLN"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/TextView_rt6"
+                    android:gravity="right"
+                    android:text="x%"
+                    android:textColor="#00ff00"
+                    android:textSize="30dp" />
+
+                <ImageView
+                    android:id="@+id/arrow_image3"
+                    android:layout_width="15dp"
+                    android:layout_height="20sp"
+                    android:layout_gravity="right|top"
+                    android:layout_marginTop="14dp"
+                    android:src="@drawable/green_arrow" />
+		        </TableRow>
+		</TableLayout>
+
+</LinearLayout>

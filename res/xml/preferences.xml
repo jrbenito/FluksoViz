@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory
+                android:title="Sensors Phase setup" android:summary="Select how many sensors to poll. If more then one selected the results will be stacked and realtime display will show a SUM of all selected sensors.">
+                 <ListPreference
+                        android:title="Number of sensors"
+                        android:summary="Number of sensors to graph and logic involved"
+                        android:key="sensor_number"
+                        android:entries="@array/sensor_number"
+                        android:entryValues="@array/sensor_number_val"
+                        android:defaultValue="1" />
+                 <CheckBoxPreference 
+                     android:defaultValue="false"
+                     android:title="Skip initial sensor checks" 
+                     android:key="skip_initial_sensor_checks" 
+                     android:summary="This will not test sensors at the application launch and  will start running both threads right away  but might/will crash if the api_key or token are wrong. "/>
+
+        </PreferenceCategory>
+        <PreferenceCategory
+                android:title="Flukso device parameters">
+        <EditTextPreference
+                android:defaultValue="172.16.1.24"
+                android:title="IP address"
+                android:key="flukso_ip_addr" android:summary="IP address of the Flukso device in the local network"/>
+        <EditTextPreference android:title="Sensor #1 API key" android:key="sensor_1_api_key" android:defaultValue="19a7872c1d0f4bbf857a5183d6768f5e"/><EditTextPreference android:title="Sensor #1 Token" android:key="sensor_1_token" android:defaultValue="aff6ae7c3b5f197e07960e8cf5e549e4" android:summary="Token for accessing flukso server API"/><EditTextPreference android:title="Sensor #2 API key" android:key="sensor_2_api_key" android:defaultValue="1e34dbdc7faa26b3ecb36e575fe86a91"/><EditTextPreference android:title="Sensor #2 Token" android:key="sensor_2_token" android:defaultValue="2bb0ab3d840fd208b4c41f7b16d678d3" android:summary="Token for accessing flukso server API" /><EditTextPreference android:title="Sensor #3 API key" android:key="sensor_3_api_key" android:defaultValue="9b59eca5a50d772e9bf7a298073073be"/>
+        <EditTextPreference android:title="Sensor #3 Token" android:key="sensor_3_token" android:defaultValue="f34c938ce3b0ca19f6013b13099a9278" android:summary="Token for accessing flukso server API" />
+                         <ListPreference
+                        android:title="API Server"
+                        android:summary="Select API server if not using flukso.net"
+                        android:key="api_server"
+                        android:entries="@array/api_server"
+                        android:entryValues="@array/api_server_val"
+                        android:defaultValue="178.79.177.6" />
+        
+        </PreferenceCategory><PreferenceCategory android:title="Energy Price">
+        <EditTextPreference android:digits="0123456789." android:defaultValue="32.50" android:title="Fixed" android:key="cost_fixedpart" android:summary="Fixed montly cost of energy delivery "/>
+        <EditTextPreference android:digits="0123456789." android:defaultValue="0.35" android:title="1 kWh cost" android:key="cost_perkwh" android:summary="Cost of 1 kWh delivered"/>
+        <EditTextPreference  android:defaultValue="PLN" android:title="Curency code" android:key="cost_currencycode" android:summary="Curency code for display on the main screen."/>
+        </PreferenceCategory>
+</PreferenceScreen>
