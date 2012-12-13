@@ -3,7 +3,7 @@
 
     <string name="hello">Hello World, LoopExampleActivity!</string>
     <string name="app_name">Flukso Viz</string>
-    <string name="set_preferences">Prefernces for FuksoViz</string>
+    <string name="set_preferences">Preferences for FuksoViz</string>
 
      <string-array name="sensor_number">
 	        <item>1 sensor</item>
@@ -29,6 +29,14 @@
 	        <item>api.mysmartgrid.de:8443</item>
 	        
     </string-array>
+	        <string name="nw_chk_results">Network check results:</string>
+	        <string name="run_both_th_local_remote">Run Both Threads\n Local &amp; Remote</string>
+	        <string name="run_just_local_th">Run just Local Thread</string>
+	        <string name="disabled">Disabled</string>
+	        <string name="let_me_fix_the_prefs_first">Let me fix the prefs first</string>
+	        <string name="preferences">Preferences</string>
+	        <string name="flukso_ip_address_is_wrong">LOOKS like local Flukso IP address is wrong!</string>
+	        <string name="exception">Exception</string>
     
     
     

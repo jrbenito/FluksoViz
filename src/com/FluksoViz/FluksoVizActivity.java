@@ -28,9 +28,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Currency;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 import java.util.NoSuchElementException;
 
 import org.apache.http.HttpResponse;
@@ -426,20 +428,21 @@ public class FluksoVizActivity extends Activity {
 			thread_updater2.start();
 		} else {
 			run_network_token_test();
+			// Alert dialog when application starts
 			new AlertDialog.Builder( this )
-			.setTitle( "Network check results:" )
+			.setTitle( R.string.nw_chk_results )
 			.setMessage(network_checks_results)
 			.setIcon(android.R.drawable.ic_menu_agenda)
-			.setPositiveButton( "Run Both Threads\n Local & Remote ", new DialogInterface.OnClickListener() {
+			.setPositiveButton( R.string.run_both_th_local_remote, new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					thread_updater1s.start();
 					thread_updater2.start();
 				}
 			})
-			.setNeutralButton( "Run just Local Thread", new DialogInterface.OnClickListener() {
+			.setNeutralButton( R.string.run_just_local_th, new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					thread_updater1s.start();
-					Plot2.setTitle("Disabled");
+					Plot2.setTitle(getString(R.string.disabled));
 					tv_today_kwh.setTextColor(Color.BLACK);
 					tv_today_cost.setTextColor(Color.BLACK);
 					tv_today_percent.setTextColor(Color.BLACK);
@@ -454,7 +457,7 @@ public class FluksoVizActivity extends Activity {
 					tv_month_percent.setTextColor(Color.BLACK);
 				}
 			})
-			.setNegativeButton( "Let me fix the prefs first", new DialogInterface.OnClickListener() {
+			.setNegativeButton( R.string.let_me_fix_the_prefs_first, new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					
 				}
@@ -482,7 +485,7 @@ public class FluksoVizActivity extends Activity {
 		api_token_3 = (String) my_app_prefs.getString("sensor_3_token", "0.0.0.0");
 		cost_fixedpart = Double.parseDouble(my_app_prefs.getString("cost_perkwh", "0"));
 		cost_perkwh = Double.parseDouble(my_app_prefs.getString("cost_perkwh", "0"));
-		cost_currencycode = (String) my_app_prefs.getString("cost_currencycode", "PLN");
+		cost_currencycode = (String) my_app_prefs.getString("cost_currencycode", Currency.getInstance(Locale.getDefault()).getCurrencyCode());
 		
 		
 		thread1_running = true;
@@ -1163,8 +1166,8 @@ public class FluksoVizActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		menu.add(0, 0, 0, "Preferences").setIcon(android.R.drawable.ic_menu_manage);
-		menu.add(0, 1, 1, "Created by Maciej Eckstein \n Version:" + versionName).setIcon(android.R.drawable.ic_menu_help);
+		menu.add(0, 0, 0, R.string.preferences).setIcon(android.R.drawable.ic_menu_manage);
+		menu.add(0, 1, 1, "Created by" + " Maciej Eckstein \n " + "Version:" + versionName).setIcon(android.R.drawable.ic_menu_help);
 		;
 		return true;
 	}
@@ -1577,15 +1580,15 @@ public class FluksoVizActivity extends Activity {
 			}
 		} catch (ClientProtocolException e) {
 			e.printStackTrace();
-			Toast.makeText(FluksoVizActivity.this,"Exception \n" + e.toString() , Toast.LENGTH_LONG).show();
+			Toast.makeText(FluksoVizActivity.this,R.string.exception + "\n" + e.toString() , Toast.LENGTH_LONG).show();
 			return false;
 			
 		} catch (SocketTimeoutException e) {
-			Toast.makeText(FluksoVizActivity.this,"LOOKS like local Flukso IP address is wrong! \n" + e.toString() , Toast.LENGTH_LONG).show();
+			Toast.makeText(FluksoVizActivity.this,R.string.flukso_ip_address_is_wrong + "\n" + e.toString() , Toast.LENGTH_LONG).show();
 			e.printStackTrace();
 			return false;
 		} catch (IOException e) {
-			Toast.makeText(FluksoVizActivity.this,"Exception \n" + e.toString() , Toast.LENGTH_LONG).show();
+			Toast.makeText(FluksoVizActivity.this,R.string.exception + "\n" + e.toString() , Toast.LENGTH_LONG).show();
 			e.printStackTrace();
 			return false;
 		}
