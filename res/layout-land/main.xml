@@ -26,7 +26,7 @@
 		            android:layout_alignParentRight="true"
 		            android:text="2011-11-09 12:00" />
 		</RelativeLayout>
-		<RelativeLayout
+		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
 		    android:id="@+id/RelativeLayout02" 
 		    android:layout_width="fill_parent" 
@@ -56,7 +56,7 @@
 				           android:layout_alignBaseline="@+id/textView1"
 				           android:layout_alignBottom="@+id/textView1"
 				           android:layout_toRightOf="@+id/textView1"
-				           android:text=" W"
+				           android:text="@string/watt_symbol"
 				           android:textColor="#FFFFFF"
 				           android:textSize="30sp" />
 
@@ -120,7 +120,7 @@
 
  				        <TextView
  				            android:id="@+id/textView_r1"
- 				            android:text="Today"
+ 				            android:text="@string/today"
  				            android:textColor="#FFFFFF"
  				            android:textSize="25sp" />
 
@@ -133,7 +133,7 @@
 
  				        <TextView
  				            android:id="@+id/TextView_r3"
- 				            android:text=" kWh"
+ 				            android:text="@string/kwh_symbol"
  				            android:textSize="13sp" />
 
  				        <TextView
@@ -171,7 +171,7 @@
 
  				        <TextView
  				            android:id="@+id/textView_rd1"
- 				            android:text="Week"
+ 				            android:text="@string/week"
  				            android:textColor="#FFFFFF"
  				            android:textSize="25sp" />
 
@@ -184,7 +184,7 @@
 
  				        <TextView
  				            android:id="@+id/TextView_rd3"
- 				            android:text=" kWh"
+ 				            android:text="@string/kwh_symbol"
  				            android:textSize="13sp" />
 
  				        <TextView
@@ -222,7 +222,7 @@
 
  				        <TextView
  				            android:id="@+id/textView_rt1"
- 				            android:text="Month"
+ 				            android:text="@string/month"
  				            android:textColor="#FFFFFF"
  				            android:textSize="25sp" />
 
@@ -235,7 +235,7 @@
 
  				        <TextView
  				            android:id="@+id/TextView_rt3"
- 				            android:text=" kWh"
+ 				            android:text="@string/kwh_symbol"
  				            android:textSize="13sp" />
 
  				        <TextView
@@ -273,7 +273,7 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:orientation="horizontal" >	
-		    <com.androidplot.xy.XYPlot
+		    <com.androidplot.xy.XYPlot
 		        android:id="@+id/Plot1"
 		        android:layout_width="415px"
 		        android:layout_height="220px"
@@ -290,6 +290,6 @@
 		        android:layout_marginRight="0px"
 		        android:layout_marginTop="0px"
 		        title="Power (W) - last day" />
-	</LinearLayout>	
+	</LinearLayout>	
        
 </LinearLayout>

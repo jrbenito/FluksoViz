@@ -6,25 +6,24 @@
 
 		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
-		    android:id="@+id/RelativeLayout01" 
-		    android:layout_width="fill_parent" 
+		    android:id="@+id/RelativeLayout01"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content">
 		    	<TextView
 		            android:id="@+id/textView01"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentLeft="true"
-		            android:text="General debug" />
-		    
-		
+		            android:text="@string/general_debug" />
+
 		        <TextView
 		            android:id="@+id/textView2"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentRight="true"
-		            android:text="2011-11-09 12:00" />
+		            android:text="" />
 		</RelativeLayout>
-
+
 		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
 		    android:id="@+id/RelativeLayout02"
@@ -32,12 +31,11 @@
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="-40dp"
 		    android:gravity="center" >
-		
 		       <TextView
 	    		    android:id="@+id/textView1"
 	    		    android:layout_width="wrap_content"
 	    		    android:layout_height="wrap_content"
-	    		    android:text="1234"
+	    		    android:text="----"
 	    		    android:textColor="#FFFFFF"
 	    		    android:textSize="180sp" />
 
@@ -48,10 +46,10 @@
 		           android:layout_alignBaseline="@+id/textView1"
 		           android:layout_alignBottom="@+id/textView1"
 		           android:layout_toRightOf="@+id/textView1"
-		           android:text=" W"
+		           android:text="@string/watt_symbol"
 		           android:textColor="#FFFFFF"
 		           android:textSize="40sp" />
-		       
+
 		       <TextView
 		             android:id="@+id/textView_delta"
 		             android:layout_width="wrap_content"
@@ -70,7 +68,7 @@
 		           android:layout_marginTop="52dp"
 		           android:layout_alignRight="@+id/textView_delta"
 		           android:textColor="#000000"
-		           android:text="0w"
+		           android:text="@string/watt_symbol"
 		           android:textAppearance="?android:attr/textAppearanceSmall" />
 
 	           <TextView
@@ -80,9 +78,9 @@
 	               android:layout_alignRight="@+id/textView_p3"
 	               android:layout_below="@+id/textView_p3"
 	               android:textColor="#000000"
-	               android:text="0w"
+	               android:text="@string/watt_symbol"
 	               android:textAppearance="?android:attr/textAppearanceSmall" />
-	           
+
 	           <TextView
 	               android:id="@+id/textView_p1"
 	               android:layout_width="wrap_content"
@@ -90,19 +88,12 @@
 	               android:layout_alignRight="@+id/textView_p2"
 	               android:layout_below="@+id/textView_p2"
 	               android:textColor="#000000"
-	               android:text="0w"
+	               android:text="@string/watt_symbol"
 	               android:textAppearance="?android:attr/textAppearanceSmall" />
-	           
-	           
-	           
-	           
-	           
 
 		</RelativeLayout>
-		    
-    	
-    
-    <com.androidplot.xy.XYPlot
+
+    <com.androidplot.xy.XYPlot
         android:id="@+id/Plot1"
         android:layout_width="fill_parent"
         android:layout_height="240dp"
@@ -110,7 +101,7 @@
         android:layout_marginRight="-7px"
         android:layout_marginTop="-8px"
         title="      Power (W) - last minute - 3 phases       " />
-    
+
         <com.androidplot.xy.XYPlot
         android:id="@+id/Plot2"
         android:layout_width="fill_parent"
@@ -119,7 +110,7 @@
         android:layout_marginRight="-7px"
         android:layout_marginTop="0px"
         title="Power (W) - last day - connecting to server api..." />
-
+
         <TableLayout
             android:id="@+id/tableLayout1"
             android:layout_width="fill_parent"
@@ -135,18 +126,18 @@
 
                 <TextView
                     android:id="@+id/textView_r1"
-                    android:text="Today"
+                    android:text="@string/today"
                     android:textColor="#FFFFFF"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                     <TableLayout
-			            android:id="@+id/tableLayout2"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:shrinkColumns="*" >
-			            
+                        android:id="@+id/tableR1Layout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:shrinkColumns="*" >
+
 	                 <TableRow
-	                     android:id="@+id/tableRow1"
+	                     android:id="@+id/tableR1Row1"
 	                     android:layout_width="wrap_content"
 	                     android:layout_height="wrap_content"
 	                     android:gravity="right" >
@@ -154,16 +145,16 @@
 		                <TextView
 		                    android:id="@+id/TextView_r2"
 		                    android:gravity="right"
-		                    android:text="20.00"
-		                    android:textSize="38dp" android:textStyle="bold"/>
+		                    android:text="0.00"
+		                    android:textSize="38sp" android:textStyle="bold"/>
 		                 <TextView
 		                    android:id="@+id/TextView_r3"
-		                    android:text=" kWh"
-		                    android:textSize="14dp" />
+		                    android:text="@string/kwh_symbol"
+		                    android:textSize="14sp" />
 		               </TableRow>
-
+
 		                <TableRow
-		                    android:id="@+id/tableRow1"
+		                    android:id="@+id/tableR1Row2"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_marginTop="-7sp"
@@ -173,39 +164,40 @@
 		                    android:id="@+id/TextView_r22"
 		                    android:gravity="right"
 		                    android:text="0.00"
-		                    android:textSize="14dp" />
+		                    android:textSize="14sp" />
 		                 <TextView
 		                    android:id="@+id/TextView_r33"
-		                    android:text=" W"
-		                    android:textSize="14dp" />
+		                    android:text="@string/watt_symbol"
+		                    android:textSize="14sp" />
 		               </TableRow>
 					</TableLayout>
-               
+
 
                 <TextView
                     android:id="@+id/TextView_r4"
                     android:gravity="right"
                     android:text="0.00"
-                    android:textSize="38dp" android:textStyle="bold"/>
+                    android:textSize="38sp" android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/TextView_r5"
-                    android:text=" PLN"
-                    android:textSize="14dp" />
-
+                    android:text=""
+                    android:textSize="14sp" />
+
                 <TextView
                     android:id="@+id/TextView_r6"
                     android:gravity="right"
-                    android:text="20%"
+                    android:text="0%"
                     android:textColor="#ff0000"
-                    android:textSize="30dp" />
-
+                    android:textSize="30sp" />
+
                 <ImageView
                     android:id="@+id/arrow_image1"
                     android:layout_width="15dp"
                     android:layout_height="20sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="14dp"
+                    android:contentDescription="Arrow"
                     android:src="@drawable/red_arrow" />
 
 		        </TableRow>
@@ -217,36 +209,36 @@
 
                 <TextView
                     android:id="@+id/textView_rd1"
-                    android:text="Week"
+                    android:text="@string/week"
                     android:textColor="#FFFFFF"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
-                 <TableLayout
-			            android:id="@+id/tableLayout2"
-			            android:layout_width="fill_parent"
-			            android:layout_height="wrap_content"
-			            android:shrinkColumns="*" >
+                <TableLayout
+                    android:id="@+id/tableR2Layout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:shrinkColumns="*" >
 
 	                 <TableRow
-	                     android:id="@+id/tableRow1"
+	                     android:id="@+id/tableR2Row1"
 	                     android:layout_width="wrap_content"
 	                     android:layout_height="wrap_content"
 	                     android:gravity="right" >
-		                 
+
 		               <TextView
 		                    android:id="@+id/TextView_rd2"
 		                    android:gravity="right"
-		                    android:text="123"
-		                    android:textSize="38dp" android:textStyle="bold"/>
+		                    android:text=""
+		                    android:textSize="38sp" android:textStyle="bold"/>
 
                 		<TextView
 		                    android:id="@+id/TextView_rd3"
-		                    android:text=" kWh"
-		                    android:textSize="14dp" />
+		                    android:text="@string/kwh_symbol"
+		                    android:textSize="14sp" />
 		             </TableRow>
 
 		             <TableRow
-		                 android:id="@+id/tableRow1"
+		                 android:id="@+id/tableR2Row2"
 		                 android:layout_width="wrap_content"
 		                 android:layout_height="wrap_content"
 		                 android:layout_marginTop="-7sp"
@@ -256,42 +248,41 @@
 		                    android:id="@+id/TextView_rd22"
 		                    android:gravity="right"
 		                    android:text="0.00"
-		                    android:textSize="14dp" />
+		                    android:textSize="14sp" />
  			              <TextView
 		                    android:id="@+id/TextView_rd33"
-		                    android:text=" W"
-		                    android:textSize="14dp" />
-		               </TableRow>
-					</TableLayout>
-                
-                
-                
-              
+		                    android:text="@string/watt_symbol"
+		                    android:textSize="14sp" />
+		             </TableRow>
+				</TableLayout>
 
                 <TextView
                     android:id="@+id/TextView_rd4"
                     android:gravity="right"
                     android:text="0.00"
-                    android:textSize="38dp" android:textStyle="bold"/>
+                    android:textSize="38sp" android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/TextView_rd5"
-                    android:text=" PLN"
-                    android:textSize="14dp" />
+                    android:text=""
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/TextView_rd6"
                     android:gravity="right"
-                    android:text="10%"
+                    android:text="0%"
                     android:textColor="#00ff00"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <ImageView
                     android:id="@+id/arrow_image2"
                     android:layout_width="15dp"
                     android:layout_height="20sp"
                     android:layout_gravity="right|top"
-                    android:src="@drawable/green_arrow" android:layout_marginTop="14dp"/>
+                    android:layout_marginTop="14dp"
+                    android:contentDescription="Arrow"
+                    android:src="@drawable/green_arrow" />
+
 		        </TableRow>
 
 		        <TableRow
@@ -301,17 +292,18 @@
 
                 <TextView
                     android:id="@+id/textView_rt1"
-                    android:text="Month"
+                    android:text="@string/month"
                     android:textColor="#FFFFFF"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
+
 					<TableLayout
-			            android:id="@+id/tableLayout2"
-			            android:layout_width="fill_parent"
-			            android:layout_height="wrap_content"
-			            android:shrinkColumns="*" >
+					    android:id="@+id/tableR3Layout2"
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    android:shrinkColumns="*" >
 
 	                 <TableRow
-	                     android:id="@+id/tableRow1"
+	                     android:id="@+id/tableR3Row1"
 	                     android:layout_width="wrap_content"
 	                     android:layout_height="wrap_content"
 	                     android:gravity="right" >
@@ -320,16 +312,16 @@
 		                    android:id="@+id/TextView_rt2"
 		                    android:gravity="right"
 		                    android:text="0.0"
-		                    android:textSize="38dp" android:textStyle="bold"/>
+		                    android:textSize="38sp" android:textStyle="bold"/>
 
               		 	<TextView
 		                    android:id="@+id/TextView_rt3"
-		                    android:text=" kWh"
-		                    android:textSize="14dp" />
+		                    android:text="@string/kwh_symbol"
+		                    android:textSize="14sp" />
 		             </TableRow>
 
 		             <TableRow
-		                 android:id="@+id/tableRow1"
+		                 android:id="@+id/tableR3Row2"
 		                 android:layout_width="wrap_content"
 		                 android:layout_height="wrap_content"
 		                 android:layout_marginTop="-7sp"
@@ -339,32 +331,31 @@
 		                    android:id="@+id/TextView_rt22"
 		                    android:gravity="right"
 		                    android:text="0.00"
-		                    android:textSize="14dp" />
+		                    android:textSize="14sp" />
  			              <TextView
 		                    android:id="@+id/TextView_rt33"
-		                    android:text=" W"
-		                    android:textSize="14dp" />
+		                    android:text="@string/watt_symbol"
+		                    android:textSize="14sp" />
 		               </TableRow>
 					</TableLayout>
-               
 
                 <TextView
                     android:id="@+id/TextView_rt4"
                     android:gravity="right"
                     android:text="0.0"
-                    android:textSize="38dp" android:textStyle="bold"/>
+                    android:textSize="38sp" android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/TextView_rt5"
-                    android:text=" PLN"
-                    android:textSize="14dp" />
+                    android:text=""
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/TextView_rt6"
                     android:gravity="right"
                     android:text="x%"
                     android:textColor="#00ff00"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
                 <ImageView
                     android:id="@+id/arrow_image3"
@@ -372,7 +363,9 @@
                     android:layout_height="20sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="14dp"
+                    android:contentDescription="Arrow"
                     android:src="@drawable/green_arrow" />
+
 		        </TableRow>
 		</TableLayout>
 
