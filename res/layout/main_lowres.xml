@@ -26,7 +26,7 @@
 		            android:textSize="11sp"
 		            android:text="2011-11-09 12:00" />
 		</RelativeLayout>
-
+
 		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
 		    android:id="@+id/RelativeLayout02"
@@ -34,7 +34,7 @@
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="-25dp"
 		    android:gravity="center" >
-		
+		
 		       <TextView
 		           android:id="@+id/textView1"
 		           android:layout_width="wrap_content"
@@ -107,7 +107,7 @@
 		    
     	
     
-    <com.androidplot.xy.XYPlot
+    <com.androidplot.xy.XYPlot
         android:id="@+id/Plot1"
         android:layout_width="fill_parent"
         android:layout_height="120px"
@@ -124,7 +124,7 @@
         android:layout_marginRight="0px"
         android:layout_marginTop="-10px"
         title="Power (W) - last day - connecting to server api..." />
-
+
         <TableLayout
             android:id="@+id/tableLayout1"
             android:layout_width="fill_parent"
@@ -198,7 +198,7 @@
                     android:id="@+id/TextView_r5"
                     android:text=" PLN"
                     android:textSize="9sp" />
-
+
                 <TextView
                     android:id="@+id/TextView_r6"
                     android:gravity="right"
