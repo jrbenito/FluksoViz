@@ -29,6 +29,12 @@
 	        <item>api.mysmartgrid.de:8443</item>
 	        
     </string-array>
+	        <string name="general_debug">General debug</string>
+	        <string name="watt_symbol">W</string>
+	        <string name="today">Today</string>
+	        <string name="kwh_symbol">KWh</string>
+	        <string name="week">Week</string>
+	        <string name="month">Month</string>
     
     
     
