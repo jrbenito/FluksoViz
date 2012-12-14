@@ -25,7 +25,6 @@ import java.text.DecimalFormat;
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -1535,7 +1534,11 @@ public class FluksoVizActivity extends Activity {
 	
 	private class DateFormat_p1 extends Format {
 
-		private SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
+		/**
+		 * Silence the warning with default solution
+		 */
+		private static final long serialVersionUID = 1L;
+		private DateFormat dateFormat = DateFormat.getDateTimeInstance();
 
 		@Override
 		public StringBuffer format(Object obj, StringBuffer toAppendTo, FieldPosition pos) {
