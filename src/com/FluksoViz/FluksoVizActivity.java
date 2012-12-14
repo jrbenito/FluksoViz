@@ -20,6 +20,7 @@ package com.FluksoViz;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.FieldPosition;
 import java.text.Format;
@@ -111,14 +112,14 @@ public class FluksoVizActivity extends Activity {
 	int sensor_number;
 	double cost_fixedpart, cost_perkwh;
 
-	String DATE_FORMAT_NOW = "HH:mm:ss"; //
+	//String DATE_FORMAT_NOW = "HH:mm:ss"; //
 	String ip_addr, api_key_1, api_key_2, api_key_3, api_token_1, api_token_2, api_token_3;
 	String cost_currencycode;
 	String network_checks_results = null;
 	String api_server_ip;
 
-	SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
-	SimpleDateFormat sdf2 = new SimpleDateFormat("HH:mm");
+	DateFormat sdf = DateFormat.getDateTimeInstance();
+	DateFormat sdf2 = DateFormat.getTimeInstance();
 
 	Handler handler = new Handler();
 	Handler handler2 = new Handler();
