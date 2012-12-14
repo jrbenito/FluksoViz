@@ -199,8 +199,14 @@ public class FluksoVizActivity extends Activity {
 		Napis3 = (TextView) findViewById(R.id.textView_r1);
 		Napis4 = (TextView) findViewById(R.id.textView_rd1);
 		tv_p1 = (TextView) findViewById(R.id.textView_p1);
+		tv_p1.setTextColor(Color.WHITE);
+		tv_p1.setVisibility(TextView.INVISIBLE);
 		tv_p2 = (TextView) findViewById(R.id.textView_p2);
+		tv_p2.setTextColor(Color.WHITE);
+		tv_p2.setVisibility(TextView.INVISIBLE);
 		tv_p3 = (TextView) findViewById(R.id.textView_p3);
+		tv_p3.setTextColor(Color.WHITE);
+		tv_p3.setVisibility(TextView.INVISIBLE);
 		tv_today_kwh = (TextView) findViewById(R.id.TextView_r2);
 		tv_today_cost = (TextView) findViewById(R.id.TextView_r4);
 		tv_today_percent = (TextView) findViewById(R.id.TextView_r6);
@@ -231,7 +237,8 @@ public class FluksoVizActivity extends Activity {
 		W = (TextView) findViewById(R.id.textView4);
 		napis_delta = (TextView) findViewById(R.id.textView_delta);
 		napis_delta.setText("" + (char) 0x0394);
-		napis_delta.setTextColor(Color.BLACK);
+		napis_delta.setTextColor(Color.WHITE);
+		napis_delta.setVisibility(TextView.INVISIBLE);
 	
 		Plot1 = (XYPlot) findViewById(R.id.Plot1);
 		Plot2 = (XYPlot) findViewById(R.id.Plot2);
@@ -291,12 +298,12 @@ public class FluksoVizActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (delta_mode) {
-					napis_delta.setTextColor(Color.BLACK);
+					napis_delta.setVisibility(TextView.INVISIBLE);
 					delta_mode = false;
 					delta_value = 0;
 					//Plot1.removeMarker(marker1);
 				} else {
-					napis_delta.setTextColor(Color.WHITE);
+					napis_delta.setVisibility(TextView.VISIBLE);
 					delta_mode = true;
 					try {
 						delta_value = seriesSUM123linkedlist.getLast().intValue();
@@ -354,9 +361,9 @@ public class FluksoVizActivity extends Activity {
 					}
 					case 1: {
 						Plot1.setTitle("Power (W) - last minute -  with details");
-						tv_p1.setTextColor(Color.WHITE);
-						tv_p2.setTextColor(Color.WHITE);
-						tv_p3.setTextColor(Color.WHITE);
+						tv_p1.setVisibility(TextView.VISIBLE);
+						tv_p2.setVisibility(TextView.VISIBLE);
+						tv_p3.setVisibility(TextView.VISIBLE);
 						break;
 					}
 					case 2: {
@@ -364,9 +371,9 @@ public class FluksoVizActivity extends Activity {
 						Plot1.removeSeries(series2m);
 						Plot1.removeSeries(series1m);
 						Plot1.redraw();
-						tv_p1.setTextColor(Color.BLACK);
-						tv_p2.setTextColor(Color.BLACK);
-						tv_p3.setTextColor(Color.BLACK);
+						tv_p1.setVisibility(TextView.INVISIBLE);
+						tv_p2.setVisibility(TextView.INVISIBLE);
+						tv_p3.setVisibility(TextView.INVISIBLE);
 						break;
 					}
 					}
@@ -382,9 +389,9 @@ public class FluksoVizActivity extends Activity {
 					case 1: {
 						Plot1.setTitle("Power (W) - last minute -  with details");
 						Plot1.redraw();
-						tv_p1.setTextColor(Color.WHITE);
-						tv_p2.setTextColor(Color.WHITE);
-						tv_p3.setTextColor(Color.WHITE);
+						tv_p1.setVisibility(TextView.VISIBLE);
+						tv_p2.setVisibility(TextView.VISIBLE);
+						tv_p3.setVisibility(TextView.VISIBLE);
 						break;
 					}
 					case 2: {
@@ -392,9 +399,9 @@ public class FluksoVizActivity extends Activity {
 						//Plot1.removeSeries(series2m);
 						//Plot1.removeSeries(series1m);
 						Plot1.redraw();
-						tv_p1.setTextColor(Color.BLACK);
-						tv_p2.setTextColor(Color.BLACK);
-						tv_p3.setTextColor(Color.BLACK);
+						tv_p1.setVisibility(TextView.INVISIBLE);
+						tv_p2.setVisibility(TextView.INVISIBLE);
+						tv_p3.setVisibility(TextView.INVISIBLE);
 						break;
 					}
 					}
@@ -440,18 +447,18 @@ public class FluksoVizActivity extends Activity {
 				public void onClick(DialogInterface dialog, int which) {
 					thread_updater1s.start();
 					Plot2.setTitle("Disabled");
-					tv_today_kwh.setTextColor(Color.BLACK);
-					tv_today_cost.setTextColor(Color.BLACK);
-					tv_today_percent.setTextColor(Color.BLACK);
-					tv_today_avg.setTextColor(Color.BLACK);
-					tv_week_kwh.setTextColor(Color.BLACK);
-					tv_week_avg.setTextColor(Color.BLACK);
-					tv_week_cost.setTextColor(Color.BLACK);
-					tv_week_percent.setTextColor(Color.BLACK);
-					tv_month_kwh.setTextColor(Color.BLACK); 
-					tv_month_avg.setTextColor(Color.BLACK);
-					tv_month_cost.setTextColor(Color.BLACK);
-					tv_month_percent.setTextColor(Color.BLACK);
+					tv_today_kwh.setVisibility(TextView.INVISIBLE);
+					tv_today_cost.setVisibility(TextView.INVISIBLE);
+					tv_today_percent.setVisibility(TextView.INVISIBLE);
+					tv_today_avg.setVisibility(TextView.INVISIBLE);
+					tv_week_kwh.setVisibility(TextView.INVISIBLE);
+					tv_week_avg.setVisibility(TextView.INVISIBLE);
+					tv_week_cost.setVisibility(TextView.INVISIBLE);
+					tv_week_percent.setVisibility(TextView.INVISIBLE);
+					tv_month_kwh.setVisibility(TextView.INVISIBLE); 
+					tv_month_avg.setVisibility(TextView.INVISIBLE);
+					tv_month_cost.setVisibility(TextView.INVISIBLE);
+					tv_month_percent.setVisibility(TextView.INVISIBLE);
 				}
 			})
 			.setNegativeButton( "Let me fix the prefs first", new DialogInterface.OnClickListener() {
