@@ -113,7 +113,6 @@ public class FluksoVizActivity extends Activity {
 	int sensor_number;
 	double cost_fixedpart, cost_perkwh;
 
-	//String DATE_FORMAT_NOW = "HH:mm:ss"; //
 	String ip_addr, api_key_1, api_key_2, api_key_3, api_token_1, api_token_2, api_token_3;
 	String cost_currencycode;
 	String network_checks_results = null;
@@ -293,7 +292,7 @@ public class FluksoVizActivity extends Activity {
 		series4mFormat.getLinePaint().setStrokeWidth(5);
 		series4mFormat.setFillPaint(line4mFill);
 	
-		make_graph_pretty(Plot1); // All formating of the graph goes into sperate method
+		make_graph_pretty(Plot1); // All formating of the graph goes into seperate method
 		make_graph_pretty(Plot2);
 	
 		Napis.setOnClickListener(new OnClickListener() {
@@ -737,7 +736,7 @@ public class FluksoVizActivity extends Activity {
 			}
 			
 			DecimalFormat df = setDecimalFormatProcent(today_percent);
-			tv_today_percent.setText("" + df.format(today_percent) + "%");
+			tv_today_percent.setText("" + df.format(today_percent) + R.string.percent_symbol);
 			
 
 			DecimalFormat df2 = setDecimalFormat((today_avg_watt * 24 / 1000));
@@ -785,7 +784,7 @@ public class FluksoVizActivity extends Activity {
 				iv2.setImageResource(R.drawable.red_arrow);
 			}
 			DecimalFormat df5 = setDecimalFormatProcent(week_percent);
-			tv_week_percent.setText("" + df5.format(week_percent) + "%");
+			tv_week_percent.setText("" + df5.format(week_percent) + R.string.percent_symbol);
 			
 			suma = 0;   // getting last 30 days form the monthly readout.
 			for (int num = series_monthSUM_linkedlist.size() - 60; num < series_monthSUM_linkedlist.size(); num++) {
@@ -821,7 +820,7 @@ public class FluksoVizActivity extends Activity {
 				iv3.setImageResource(R.drawable.red_arrow);
 			}
 			DecimalFormat df8 = setDecimalFormatProcent(month_percent);
-			tv_month_percent.setText("" + df8.format(month_percent) + "%");
+			tv_month_percent.setText("" + df8.format(month_percent) + R.string.percent_symbol);
 			
 			
 			
@@ -1520,17 +1519,44 @@ public class FluksoVizActivity extends Activity {
 
 	}
 
+	// Number Formatting
 	private DecimalFormat setDecimalFormat(double input_double) {
-		DecimalFormat df = new DecimalFormat("#####");
-		if  (input_double < 1000) df = new DecimalFormat("####");
-		if (input_double < 100)	df = new DecimalFormat("###.00");
-		if (input_double < 10)	df = new DecimalFormat("##.00");
+		// Try Localized numbers and avoid "re-creation" of object
+		DecimalFormat df = new DecimalFormat();  // Localized decimal format
+		df.setMaximumIntegerDigits(5);
+		df.setMaximumFractionDigits(0);
+		
+		if  (input_double < 1000) df.setMaximumIntegerDigits(4);
+		
+		if (input_double < 100)	{
+			df.setMaximumIntegerDigits(3);
+			df.setMaximumFractionDigits(2);
+		}
+		
+		/* 
+		 * Fraction digits set above, if you change this logic
+		 * remember to set fraction digits here
+		 */
+		if (input_double < 10)	df.setMaximumIntegerDigits(2);
+		
 		return df;
 	};
+	
+	// Number formatting
 	private DecimalFormat setDecimalFormatProcent(double input_double) {
-		DecimalFormat df = new DecimalFormat("#####");
-		if (input_double < 100)	df = new DecimalFormat("##");
-		if (input_double < 10)	df = new DecimalFormat("##.0");
+		// Try Localized numbers and avoid "re-creation" of object
+		DecimalFormat df = new DecimalFormat();
+		df.setMaximumIntegerDigits(5);
+		df.setMaximumFractionDigits(0);
+		
+		if (input_double < 100)	
+			df.setMaximumIntegerDigits(2);
+		
+		if (input_double < 10) {	
+			df.setMaximumFractionDigits(2);
+			df.setMaximumIntegerDigits(1);
+		}
+		
 		return df;
 	};
 	

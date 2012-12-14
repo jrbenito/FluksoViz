@@ -43,6 +43,7 @@
 	        <string name="preferences">Preferences</string>
 	        <string name="flukso_ip_address_is_wrong">LOOKS like local Flukso IP address is wrong!</string>
 	        <string name="exception">Exception</string>
+	        <string name="percent_symbol">%</string>
     
     
     
