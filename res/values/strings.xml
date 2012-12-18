@@ -65,6 +65,7 @@
 	        <string name="sensor_3_local_api_key_wrong">Sensor 3 local api key wrong</string>
 	        <string name="bad_ip_">bad IP?</string>
 	        <string name="arrow">Arrow</string>
+	        <string name="dashDisp">----</string>
     
     
     

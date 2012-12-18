@@ -35,7 +35,7 @@
 	    		    android:id="@+id/textView1"
 	    		    android:layout_width="wrap_content"
 	    		    android:layout_height="wrap_content"
-	    		    android:text="----"
+	    		    android:text="@string/dashDisp"
 	    		    android:textColor="#FFFFFF"
 	    		    android:textSize="180sp" />
 
@@ -56,7 +56,7 @@
 		             android:layout_height="wrap_content"
 		             android:layout_alignRight="@+id/textView4"
 		             android:layout_centerVertical="true"
-		             android:text="d"
+		             android:text=""
 		             android:textColor="#FFFFFF"
 		             android:textSize="30sp" />
 
@@ -145,7 +145,7 @@
 		                <TextView
 		                    android:id="@+id/TextView_r2"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="38sp" android:textStyle="bold"/>
 		                 <TextView
 		                    android:id="@+id/TextView_r3"
@@ -163,7 +163,7 @@
 		                <TextView
 		                    android:id="@+id/TextView_r22"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="14sp" />
 		                 <TextView
 		                    android:id="@+id/TextView_r33"
@@ -176,7 +176,7 @@
                 <TextView
                     android:id="@+id/TextView_r4"
                     android:gravity="right"
-                    android:text="0.00"
+                    android:text=""
                     android:textSize="38sp" android:textStyle="bold"/>
 
                 <TextView
@@ -187,7 +187,7 @@
                 <TextView
                     android:id="@+id/TextView_r6"
                     android:gravity="right"
-                    android:text="0%"
+                    android:text="@string/percent_symbol"
                     android:textColor="#ff0000"
                     android:textSize="30sp" />
 
@@ -247,7 +247,7 @@
 					      <TextView
 		                    android:id="@+id/TextView_rd22"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="14sp" />
  			              <TextView
 		                    android:id="@+id/TextView_rd33"
@@ -259,7 +259,7 @@
                 <TextView
                     android:id="@+id/TextView_rd4"
                     android:gravity="right"
-                    android:text="0.00"
+                    android:text=""
                     android:textSize="38sp" android:textStyle="bold"/>
 
                 <TextView
@@ -270,7 +270,7 @@
                 <TextView
                     android:id="@+id/TextView_rd6"
                     android:gravity="right"
-                    android:text="0%"
+                    android:text="@string/percent_symbol"
                     android:textColor="#00ff00"
                     android:textSize="30sp" />
 
@@ -311,7 +311,7 @@
 		                <TextView
 		                    android:id="@+id/TextView_rt2"
 		                    android:gravity="right"
-		                    android:text="0.0"
+		                    android:text=""
 		                    android:textSize="38sp" android:textStyle="bold"/>
 
               		 	<TextView
@@ -330,7 +330,7 @@
 					      <TextView
 		                    android:id="@+id/TextView_rt22"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="14sp" />
  			              <TextView
 		                    android:id="@+id/TextView_rt33"
@@ -342,7 +342,7 @@
                 <TextView
                     android:id="@+id/TextView_rt4"
                     android:gravity="right"
-                    android:text="0.0"
+                    android:text=""
                     android:textSize="38sp" android:textStyle="bold"/>
 
                 <TextView
@@ -353,7 +353,7 @@
                 <TextView
                     android:id="@+id/TextView_rt6"
                     android:gravity="right"
-                    android:text="x%"
+                    android:text="@string/percent_symbol"
                     android:textColor="#00ff00"
                     android:textSize="30sp" />
 
