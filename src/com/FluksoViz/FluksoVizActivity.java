@@ -522,7 +522,7 @@ public class FluksoVizActivity extends Activity {
 				switch (sensor_number) {
 				
 				case 1: {
-					if (local_p1_ok!=false) Napis01.setText("1 OK!"); else Napis01.setText("1-BAD!");
+					if (local_p1_ok!=false) Napis01.setText("1-OK!"); else Napis01.setText("1-BAD!");
 					Napis.setText("" + (series1linkedlist.getLast().intValue() - delta_value)); // main readout posting tos screen
 					Napis01.append(" 2-OFF! 3-OFF!");
 					series3mFormat.getLinePaint().setStrokeWidth(8);
@@ -532,8 +532,8 @@ public class FluksoVizActivity extends Activity {
 				}
 				
 				case 2: { 
-					if (local_p1_ok!=false) Napis01.setText("1 OK!"); else Napis01.setText("1-BAD!");
-					if (local_p2_ok!= false) Napis01.append(" 2 OK!"); else Napis01.append(" 2-BAD!");
+					if (local_p1_ok!=false) Napis01.setText("1-OK!"); else Napis01.setText("1-BAD!");
+					if (local_p2_ok!= false) Napis01.append(" 2-OK!"); else Napis01.append(" 2-BAD!");
 					Napis01.append(" 3-OFF!");
 					series2linkedlist = new LinkedList<Number>(series2mnormallist);
 					series2linkedlist.removeLast();
@@ -692,7 +692,7 @@ public class FluksoVizActivity extends Activity {
 				
 			} catch (NoSuchElementException e) {
 				Napis01.setText(e.toString());
-			}// koniec
+			}// End
 
 			thread1_running = true;
 
@@ -736,6 +736,7 @@ public class FluksoVizActivity extends Activity {
 			}
 			
 			DecimalFormat df = setDecimalFormatProcent(today_percent);
+			df.setMaximumFractionDigits(2);
 			tv_today_percent.setText("" + df.format(today_percent) + R.string.percent_symbol);
 			
 
@@ -784,6 +785,7 @@ public class FluksoVizActivity extends Activity {
 				iv2.setImageResource(R.drawable.red_arrow);
 			}
 			DecimalFormat df5 = setDecimalFormatProcent(week_percent);
+			df5.setMaximumFractionDigits(2);
 			tv_week_percent.setText("" + df5.format(week_percent) + R.string.percent_symbol);
 			
 			suma = 0;   // getting last 30 days form the monthly readout.
@@ -796,6 +798,7 @@ public class FluksoVizActivity extends Activity {
 			tv_month_avg.setText("" + df_avg.format(month_avg_watt));
 			
 			DecimalFormat df6 = setDecimalFormat((month_avg_watt*24*30/1000));
+			df6.setMaximumFractionDigits(2);
 			tv_month_kwh.setText(" " + df6.format((month_avg_watt*24*30/1000)) );
 			
 			DecimalFormat df7 = setDecimalFormat(((month_avg_watt*24*30 / 1000) * (cost_perkwh)) + (cost_fixedpart));

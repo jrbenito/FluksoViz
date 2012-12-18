@@ -197,7 +197,7 @@
                     android:layout_height="20sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="14dp"
-                    android:contentDescription="Arrow"
+                    android:contentDescription="@string/arrow"
                     android:src="@drawable/red_arrow" />
 
 		        </TableRow>
@@ -280,7 +280,7 @@
                     android:layout_height="20sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="14dp"
-                    android:contentDescription="Arrow"
+                    android:contentDescription="@string/arrow"
                     android:src="@drawable/green_arrow" />
 
 		        </TableRow>
@@ -363,7 +363,7 @@
                     android:layout_height="20sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="14dp"
-                    android:contentDescription="Arrow"
+                    android:contentDescription="@string/arrow"
                     android:src="@drawable/green_arrow" />
 
 		        </TableRow>
