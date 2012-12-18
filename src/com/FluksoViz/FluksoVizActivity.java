@@ -981,7 +981,7 @@ public class FluksoVizActivity extends Activity {
 						
 						switch (sensor_number) {
 						case 1: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // shall not translate "day"
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
 								if (num % 2 == 0) {
@@ -996,9 +996,9 @@ public class FluksoVizActivity extends Activity {
 						}
 						
 						case 2: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // shall not translate "day"
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
-							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, getString(R.string.day));
+							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, "day"); // shall not translate "day"
 							series_day2_linkedlist = new LinkedList<Number>(series_day2_list);
 							
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
@@ -1015,9 +1015,9 @@ public class FluksoVizActivity extends Activity {
 						}
 						
 						case 4: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // shall not translate "day"
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
-							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, getString(R.string.day));
+							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, "day"); // shall not translate "day"
 							series_day2_linkedlist = new LinkedList<Number>(series_day2_list);
 							
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
@@ -1034,11 +1034,11 @@ public class FluksoVizActivity extends Activity {
 						}
 						
 						case 3: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // shall not translate "day"
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
-							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, getString(R.string.day));
+							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, "day"); // shall not translate "day"
 							series_day2_linkedlist = new LinkedList<Number>(series_day2_list);
-							List<Number> series_day3_list = getserwerAPIdata(api_key_3, api_token_3, getString(R.string.day));
+							List<Number> series_day3_list = getserwerAPIdata(api_key_3, api_token_3, "day"); // shall not translate "day"
 							series_day3_linkedlist = new LinkedList<Number>(series_day3_list);
 							
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
@@ -1069,7 +1069,7 @@ public class FluksoVizActivity extends Activity {
 						case 1: {
 							List<Number> series_month1_list = getserwerAPIdata_last2month(api_key_1, api_token_1);
 							series_month1_linkedlist = new LinkedList<Number>(series_month1_list);
-							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { //obcinamy ostatni z�y
+							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { // cut last the last tears (?? translate from Polish)
 								if (num % 2 == 0) {
 									series_monthSUM_linkedlist.add(series_month1_linkedlist.get(num));
 								} else {
@@ -1086,7 +1086,7 @@ public class FluksoVizActivity extends Activity {
 							List<Number> series_month2_list = getserwerAPIdata_last2month(api_key_2, api_token_2);
 							series_month2_linkedlist = new LinkedList<Number>(series_month2_list);
 							
-							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { //obcinamy ostatni z�y i sumujemy
+							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { //we cut the last tears add up (?? translate from Polish)
 								if (num % 2 == 0) {
 									series_monthSUM_linkedlist.add(series_month1_linkedlist.get(num));
 								} else {
@@ -1106,7 +1106,7 @@ public class FluksoVizActivity extends Activity {
 							List<Number> series_month2_list = getserwerAPIdata_last2month(api_key_2, api_token_2);
 							series_month2_linkedlist = new LinkedList<Number>(series_month2_list);
 							
-							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { //obcinamy ostatni z�y
+							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { // cut last the last tears (?? translate from Polish)
 								if (num % 2 == 0) {
 									series_monthSUM_linkedlist.add(series_month1_linkedlist.get(num));
 								} else {
@@ -1128,7 +1128,7 @@ public class FluksoVizActivity extends Activity {
 							List<Number> series_month3_list = getserwerAPIdata_last2month(api_key_3, api_token_3);
 							series_month3_linkedlist = new LinkedList<Number>(series_month3_list);
 						
-							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { //obcinamy ostatni z�yi sumujemy
+							for (int num = 0; num < series_month1_linkedlist.size() - 2; num++) { //we cut the last tears add up (?? translate from Polish)
 								if (num % 2 == 0) {
 									series_monthSUM_linkedlist.add(series_month1_linkedlist.get(num));
 								} else {
@@ -1632,17 +1632,7 @@ public class FluksoVizActivity extends Activity {
 	    
 	}
 	
-
 	
-	/**
-	 * 
-	 */
-	/**
-	 * 
-	 */
-	/**
-	 * 
-	 */
 	private void run_network_token_test(){
 		if(isNetworkAvailable()){
 			network_checks_results = getString(R.string.wifi_or_networking_enabled) + "\n";
