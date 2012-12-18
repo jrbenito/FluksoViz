@@ -981,7 +981,7 @@ public class FluksoVizActivity extends Activity {
 						
 						switch (sensor_number) {
 						case 1: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
 								if (num % 2 == 0) {
@@ -996,9 +996,9 @@ public class FluksoVizActivity extends Activity {
 						}
 						
 						case 2: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
-							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, "day");
+							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, getString(R.string.day));
 							series_day2_linkedlist = new LinkedList<Number>(series_day2_list);
 							
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
@@ -1015,9 +1015,9 @@ public class FluksoVizActivity extends Activity {
 						}
 						
 						case 4: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
-							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, "day");
+							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, getString(R.string.day));
 							series_day2_linkedlist = new LinkedList<Number>(series_day2_list);
 							
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
@@ -1034,11 +1034,11 @@ public class FluksoVizActivity extends Activity {
 						}
 						
 						case 3: {
-							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
+							List<Number> series_day1_list = getserwerAPIdata(api_key_1, api_token_1, getString(R.string.day));
 							series_day1_linkedlist = new LinkedList<Number>(series_day1_list);
-							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, "day");
+							List<Number> series_day2_list = getserwerAPIdata(api_key_2, api_token_2, getString(R.string.day));
 							series_day2_linkedlist = new LinkedList<Number>(series_day2_list);
-							List<Number> series_day3_list = getserwerAPIdata(api_key_3, api_token_3, "day");
+							List<Number> series_day3_list = getserwerAPIdata(api_key_3, api_token_3, getString(R.string.day));
 							series_day3_linkedlist = new LinkedList<Number>(series_day3_list);
 							
 							for (int num = 0; num < series_day1_linkedlist.size() - 2; num++) {
@@ -1634,11 +1634,20 @@ public class FluksoVizActivity extends Activity {
 	
 
 	
+	/**
+	 * 
+	 */
+	/**
+	 * 
+	 */
+	/**
+	 * 
+	 */
 	private void run_network_token_test(){
 		if(isNetworkAvailable()){
-			network_checks_results = "Wifi or Networking enabled\n ";
+			network_checks_results = getString(R.string.wifi_or_networking_enabled) + "\n";
 			if(isFluksoRechableOverHTTP()){
-				network_checks_results = network_checks_results + "Local Flukso " + ip_addr + " reachable\n ";
+				network_checks_results = network_checks_results + getString(R.string.local_flukso) + " " + ip_addr + " " + getString(R.string.reachable) + "\n";
 				Boolean phase1_testok = false;
 				Boolean phase2_testok = false;
 				Boolean phase3_testok = false;
@@ -1646,98 +1655,114 @@ public class FluksoVizActivity extends Activity {
 				case 1: {
 					try {
 						series1mnormallist = getAPIdata(ip_addr, api_key_1);
-						network_checks_results = network_checks_results + "Sensor 1 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_test_ok) + "\n";
 						phase1_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n "
+												+ e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					}
 					phase2_testok = true;
-					network_checks_results = network_checks_results + "Sensor 2 disabled in prefs\n ";
+					network_checks_results = network_checks_results + getString(R.string.sensor_2_disabled_in_prefs) + "\n";
 					phase3_testok = true;
-					network_checks_results = network_checks_results + "Sensor 3 disabled in prefs\n ";
+					network_checks_results = network_checks_results + getString(R.string.sensor_3_disabled_in_prefs) + "\n";
 				break;	
 				}
 				
 				case 2: {
 					try {
 						series1mnormallist = getAPIdata(ip_addr, api_key_1);
-						network_checks_results = network_checks_results + "Sensor 1 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_test_ok) + "\n";
 						phase1_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n "
+												+ e.toString() +"\n" ;
 					}
 					
 					try {
 						series2mnormallist = getAPIdata(ip_addr, api_key_2);
-						network_checks_results = network_checks_results + "Sensor 2 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_test_ok) + "\n";
 						phase2_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 2 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 2 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_api_key_wrong) + "\n "
+												+ e.toString() +"\n" ;
 					}
 					phase3_testok = true;
-					network_checks_results = network_checks_results + "Sensor 3 disabled in prefs\n ";
+					network_checks_results = network_checks_results + getString(R.string.sensor_3_disabled_in_prefs) + "\n";
 				break;	
 				}
 				
 				case 4: {
 					try {
 						series1mnormallist = getAPIdata(ip_addr, api_key_1);
-						network_checks_results = network_checks_results + "Sensor 1 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_test_ok) + "\n";
 						phase1_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n "
+												+ e.toString() +"\n" ;
 					}
 					
 					try {
 						series2mnormallist = getAPIdata(ip_addr, api_key_2);
-						network_checks_results = network_checks_results + "Sensor 2 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_test_ok) + "\n";
 						phase2_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 2 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_api_key_wrong) + "\n "
+												+ e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 2 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					}
 					phase3_testok = true;
-					network_checks_results = network_checks_results + "Sensor 3 disabled in prefs\n ";
+					network_checks_results = network_checks_results + getString(R.string.sensor_3_disabled_in_prefs) + "\n";
 				break;	
 				}
 				
 				case 3: {
 					try {
 						series1mnormallist = getAPIdata(ip_addr, api_key_1);
-						network_checks_results = network_checks_results + "Sensor 1 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_test_ok) + "\n";
 						phase1_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 1 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_1_local_api_key_wrong) + "\n"
+												+ e.toString() +"\n" ;
 					}
 					
 					try {
 						series2mnormallist = getAPIdata(ip_addr, api_key_2);
-						network_checks_results = network_checks_results + "Sensor 2 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_test_ok) + "\n ";
 						phase2_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 2 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_api_key_wrong)
+												+ "\n" + e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 2 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_local_api_key_wrong)
+												+ "\n" + e.toString() +"\n" ;
 					}
 					try {
 						series1mnormallist = getAPIdata(ip_addr, api_key_3);
-						network_checks_results = network_checks_results + "Sensor 3 Local TEST OK\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_3_local_test_ok) + "\n";
 						phase3_testok = true;
 					} catch (IOException e) {
-						network_checks_results = network_checks_results + "Sensor 3 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_3_local_api_key_wrong)
+												+ "\n" + e.toString() +"\n" ;
 					} catch (Exception e) {
-						network_checks_results = network_checks_results + "Sensor 3 local api key wrong \n " + e.toString() +"\n" ;
+						network_checks_results = network_checks_results + getString(R.string.sensor_3_local_api_key_wrong)
+												+ "\n" + e.toString() +"\n" ;
 					}
 				break;
 				}
@@ -1752,100 +1777,116 @@ public class FluksoVizActivity extends Activity {
 					switch (sensor_number) {
 					case 1: {
 						try {
-							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_ok) + "\n";
 							phase1_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						}
 						phase2_remoteTestOk = true;
-						network_checks_results = network_checks_results + "Sensor 2 disabled in prefs\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_2_disabled_in_prefs) + "\n";
 						phase3_remoteTestOk = true;
-						network_checks_results = network_checks_results + "Sensor 3 disabled in prefs\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_3_disabled_in_prefs) + "\n";
 		
 					break;	
 					}
 					
 					case 2: {
 						try {
-							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_ok) + "\n";
 							phase1_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						}
 						try {
-							series_day1_list = getserwerAPIdata(api_key_2, api_token_2, "day");
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_2, api_token_2, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_ok) + "\n";
 							phase2_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_token_wrong_) + "\n"
+													+ e.toString() + "\n ";
 							Plot2.setTitle("Sensor 2 token test failed");
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_token_wrong_)+ "\n" 
+													+ e.toString() + "\n ";
 						}
 						phase3_remoteTestOk = true;
-						network_checks_results = network_checks_results + "Sensor 3 disabled in prefs\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_3_disabled_in_prefs) + "\n";
 					break;	
 					}
 					
 					case 4: {
 						try {
-							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_ok) + "\n";
 							phase1_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) 
+													+ "\n" + e.toString() + "\n";
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n";
 						}
 						try {
-							series_day1_list = getserwerAPIdata(api_key_2, api_token_2, "day");
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_2, api_token_2, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_ok) + "\n";
 							phase2_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n";
 							Plot2.setTitle("Sensor 2 token test failed");
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n";
 						}
 						phase3_remoteTestOk = true;
-						network_checks_results = network_checks_results + "Sensor 3 disabled in prefs\n ";
+						network_checks_results = network_checks_results + getString(R.string.sensor_3_disabled_in_prefs) + "\n";
 					break;	
 					}
 					
 					case 3: {
 						try {
-							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day");
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_1, api_token_1, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_ok) + "\n";
 							phase1_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 1 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_1_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						}
 						try {
-							series_day1_list = getserwerAPIdata(api_key_2, api_token_2, "day");
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_2, api_token_2, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_ok) + "\n";
 							phase2_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 							Plot2.setTitle("Sensor 2 token test failed");
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						}
 						try {
-							series_day1_list = getserwerAPIdata(api_key_3, api_token_3, "day");
-							network_checks_results = network_checks_results + "Sensor 2 Remote Server API OK\n ";
+							series_day1_list = getserwerAPIdata(api_key_3, api_token_3, "day"); // "day" shall not be translated
+							network_checks_results = network_checks_results + getString(R.string.sensor_2_remote_server_api_ok) + "\n";
 							phase3_remoteTestOk = true;
 						} catch (IOException e) {
-							network_checks_results = network_checks_results + "Sensor 3 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_3_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 						} catch (Exception e) {
-							network_checks_results = network_checks_results + "Sensor 3 Remote Server API Token wrong! \n" + e.toString() + "\n ";
+							network_checks_results = network_checks_results + getString(R.string.sensor_3_remote_server_api_token_wrong_) + "\n" 
+													+ e.toString() + "\n ";
 							Toast.makeText(FluksoVizActivity.this, "Sensor 1 Remote Server \nAPI Token wrong \n" + e.toString(), Toast.LENGTH_LONG).show();
 						}
 					break;
@@ -1854,9 +1895,9 @@ public class FluksoVizActivity extends Activity {
 					
 					
 				}//end of if local tests sucessfull - testing api
-			} else network_checks_results = network_checks_results + "Local Flukso HTTP unrechable\n "; //end of isFlusoReachable over HTTP
-		} // end of if isNetwork Available
-	  else network_checks_results = network_checks_results + "No networks at all\n ";
+			} else network_checks_results = network_checks_results + getString(R.string.local_flukso_http_unrechable) + "\n"; //end of isFlusoReachable over HTTP
+		} // end of if isNetwork Available 
+	  else network_checks_results = network_checks_results + getString(R.string.no_networks_at_all) + "\n";
 	}
 	
 	

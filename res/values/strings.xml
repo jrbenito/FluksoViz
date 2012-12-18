@@ -44,6 +44,26 @@
 	        <string name="flukso_ip_address_is_wrong">LOOKS like local Flukso IP address is wrong!</string>
 	        <string name="exception">Exception</string>
 	        <string name="percent_symbol">%</string>
+	        <string name="local_flukso_http_unrechable">Local Flukso HTTP unrechable</string>
+	        <string name="no_networks_at_all">No networks at all</string>
+	        <string name="sensor_3_remote_server_api_token_wrong_">Sensor 3 Remote Server API Token wrong!</string>
+	        <string name="sensor_2_remote_server_api_ok">Sensor 2 Remote Server API OK</string>
+	        <string name="sensor_2_remote_server_api_token_wrong_">Sensor 2 Remote Server API Token wrong!</string>
+	        <string name="sensor_1_remote_server_api_ok">Sensor 1 Remote Server API OK</string>
+	        <string name="sensor_1_remote_server_api_token_wrong_">Sensor 1 Remote Server API Token wrong!</string>
+	        <string name="day">day</string>
+	        <string name="sensor_3_disabled_in_prefs">Sensor 3 disabled in prefs</string>
+	        <string name="sensor_2_disabled_in_prefs">Sensor 2 disabled in prefs</string>
+	        <string name="wifi_or_networking_enabled">Wifi or Networking enabled</string>
+	        <string name="local_flukso">Local Flukso</string>
+	        <string name="reachable">reachable</string>
+	        <string name="sensor_1_local_test_ok">Sensor 1 Local TEST OK</string>
+	        <string name="sensor_1_local_api_key_wrong">Sensor 1 local api key wrong</string>
+	        <string name="sensor_2_local_test_ok">Sensor 2 Local TEST OK</string>
+	        <string name="sensor_2_local_api_key_wrong">Sensor 2 local api key wrong</string>
+	        <string name="sensor_3_local_test_ok">Sensor 3 Local TEST OK</string>
+	        <string name="sensor_3_local_api_key_wrong">Sensor 3 local api key wrong</string>
+	        <string name="bad_ip_">bad IP?</string>
     
     
     
