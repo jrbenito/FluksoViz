@@ -33,11 +33,13 @@
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="-25dp"
 		    android:gravity="center" >
+
 		       <TextView
 		           android:id="@+id/textView1"
 		           android:layout_width="wrap_content"
 		           android:layout_height="wrap_content"
-	    		    android:text="@string/dashDisp"
+		           android:layout_centerInParent="true"
+		           android:text="@string/dashDisp"
 		           android:textColor="#FFFFFF"
 		           android:textSize="90sp" />
 
@@ -66,34 +68,37 @@
 		           android:id="@+id/textView_p3"
 		           android:layout_width="wrap_content"
 		           android:layout_height="wrap_content"
+		           android:layout_alignParentRight="true"
 		           android:layout_alignParentTop="true"
-		           android:layout_marginTop="22dp"
 		           android:layout_alignRight="@+id/textView_delta"
-		           android:textColor="#000000"
+		           android:layout_marginTop="22dp"
 		           android:text="@string/watt_symbol"
+		           android:textColor="#FFFFFF"
 		           android:textSize="10sp" />
 
 	           <TextView
 	               android:id="@+id/textView_p2"
 	               android:layout_width="wrap_content"
 	               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 	               android:layout_alignRight="@+id/textView_p3"
 	               android:layout_below="@+id/textView_p3"
-	               android:layout_marginTop="-3dp"
 	               android:layout_marginRight="-5dp"
-	               android:textColor="#000000"
+	               android:layout_marginTop="-3dp"
 	               android:text="@string/watt_symbol"
+	               android:textColor="#FFFFFF"
 	               android:textSize="10sp" />
 
 	           <TextView
 	               android:id="@+id/textView_p1"
 	               android:layout_width="wrap_content"
 	               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 	               android:layout_alignRight="@+id/textView_p2"
 	               android:layout_below="@+id/textView_p2"
-	               android:textColor="#000000"
-	               android:text="@string/watt_symbol"
 	               android:layout_marginTop="-3dp"
+	               android:text="@string/watt_symbol"
+	               android:textColor="#FFFFFF"
 	               android:textSize="10sp" />
 
 		</RelativeLayout>

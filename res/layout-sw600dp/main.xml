@@ -31,13 +31,15 @@
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="-40dp"
 		    android:gravity="center" >
+
 		       <TextView
-	    		    android:id="@+id/textView1"
-	    		    android:layout_width="wrap_content"
-	    		    android:layout_height="wrap_content"
-	    		    android:text="@string/dashDisp"
-	    		    android:textColor="#FFFFFF"
-	    		    android:textSize="180sp" />
+		           android:id="@+id/textView1"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:layout_centerInParent="true"
+		           android:text="@string/dashDisp"
+		           android:textColor="#FFFFFF"
+		           android:textSize="180sp" />
 
 		       <TextView
 		           android:id="@+id/textView4"
@@ -51,45 +53,48 @@
 		           android:textSize="40sp" />
 
 		       <TextView
-		             android:id="@+id/textView_delta"
-		             android:layout_width="wrap_content"
-		             android:layout_height="wrap_content"
-		             android:layout_alignRight="@+id/textView4"
-		             android:layout_centerVertical="true"
-		             android:text=""
-		             android:textColor="#FFFFFF"
-		             android:textSize="30sp" />
+		           android:id="@+id/textView_delta"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:layout_alignRight="@+id/textView4"
+		           android:layout_centerVertical="true"
+		           android:text=""
+		           android:textColor="#FFFFFF"
+		           android:textSize="30sp" />
 
 		       <TextView
 		           android:id="@+id/textView_p3"
 		           android:layout_width="wrap_content"
 		           android:layout_height="wrap_content"
+		           android:layout_alignParentRight="true"
 		           android:layout_alignParentTop="true"
-		           android:layout_marginTop="52dp"
 		           android:layout_alignRight="@+id/textView_delta"
-		           android:textColor="#000000"
+		           android:layout_marginTop="52dp"
 		           android:text="@string/watt_symbol"
-		           android:textAppearance="?android:attr/textAppearanceSmall" />
+		           android:textAppearance="?android:attr/textAppearanceSmall"
+		           android:textColor="#000000" />
 
 	           <TextView
 	               android:id="@+id/textView_p2"
 	               android:layout_width="wrap_content"
 	               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 	               android:layout_alignRight="@+id/textView_p3"
 	               android:layout_below="@+id/textView_p3"
-	               android:textColor="#000000"
 	               android:text="@string/watt_symbol"
-	               android:textAppearance="?android:attr/textAppearanceSmall" />
+	               android:textAppearance="?android:attr/textAppearanceSmall"
+	               android:textColor="#000000" />
 
 	           <TextView
 	               android:id="@+id/textView_p1"
 	               android:layout_width="wrap_content"
 	               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 	               android:layout_alignRight="@+id/textView_p2"
 	               android:layout_below="@+id/textView_p2"
-	               android:textColor="#000000"
 	               android:text="@string/watt_symbol"
-	               android:textAppearance="?android:attr/textAppearanceSmall" />
+	               android:textAppearance="?android:attr/textAppearanceSmall"
+	               android:textColor="#000000" />
 
 		</RelativeLayout>
 
