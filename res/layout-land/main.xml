@@ -8,8 +8,8 @@
     
 		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
-		    android:id="@+id/RelativeLayout01" 
-		    android:layout_width="fill_parent" 
+		    android:id="@+id/RelativeLayout01"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content">
 		    
 		    	<TextView
@@ -17,14 +17,14 @@
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentLeft="true"
-		            android:text="JSON Array" />
-		
+		            android:text="@string/general_debug" />
+
 		        <TextView
 		            android:id="@+id/textView2"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentRight="true"
-		            android:text="2011-11-09 12:00" />
+		            android:text="" />
 		</RelativeLayout>
 		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
@@ -40,12 +40,13 @@
 				    android:layout_marginTop="-40dp"
 				    android:layout_marginLeft="-6dp"
 				    android:gravity="center" >
-				
+
 				       <TextView
 			    		    android:id="@+id/textView1"
 			    		    android:layout_width="wrap_content"
 			    		    android:layout_height="wrap_content"
-			    		    android:text="5234"
+		           android:layout_centerInParent="true"
+		           android:text="@string/dashDisp"
 			    		    android:textColor="#FFFFFF"
 			    		    android:textSize="160sp" />
 		
@@ -66,41 +67,43 @@
 				             android:layout_height="wrap_content"
 				             android:layout_alignRight="@+id/textView4"
 				             android:layout_centerVertical="true"
-				             android:text="d"
+		           android:text=""
 				             android:textColor="#FFFFFF"
 				             android:textSize="30sp" />
          		       <TextView
 					           android:id="@+id/textView_p3"
 					           android:layout_width="wrap_content"
 					           android:layout_height="wrap_content"
+		           android:layout_alignParentRight="true"
 					           android:layout_alignParentTop="true"
-					           android:layout_marginTop="52dp"
 					           android:layout_alignRight="@+id/textView_delta"
-					           android:textColor="#000000"
-					           android:text="375w"
-					           android:textAppearance="?android:attr/textAppearanceSmall" />
+		           android:layout_marginTop="52dp"
+		           android:text="@string/watt_symbol"
+					           android:textAppearance="?android:attr/textAppearanceSmall"
+		           android:textColor="#000000" />
 			
 				           <TextView
 				               android:id="@+id/textView_p2"
 				               android:layout_width="wrap_content"
 				               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 				               android:layout_alignRight="@+id/textView_p3"
 				               android:layout_below="@+id/textView_p3"
-				               android:textColor="#000000"
-				               android:text="245w"
-				               android:textAppearance="?android:attr/textAppearanceSmall" />
-				           
+	               android:text="@string/watt_symbol"
+	               android:textAppearance="?android:attr/textAppearanceSmall"
+	               android:textColor="#000000" />
+
 				           <TextView
 				               android:id="@+id/textView_p1"
 				               android:layout_width="wrap_content"
 				               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 				               android:layout_alignRight="@+id/textView_p2"
 				               android:layout_below="@+id/textView_p2"
-				               android:textColor="#000000"
-				               android:text="145w"
-				               android:textAppearance="?android:attr/textAppearanceSmall" />
-	           
-		
+	               android:text="@string/watt_symbol"
+	               android:textAppearance="?android:attr/textAppearanceSmall"
+	               android:textColor="#000000" />
+
 				</RelativeLayout>
 
  				<TableLayout
@@ -127,31 +130,31 @@
  				        <TextView
  				            android:id="@+id/TextView_r2"
  				            android:gravity="right"
- 				            android:text="0.456"
- 				            android:textSize="30sp"
- 				            android:textStyle="bold" />
+		                    android:text=""
+		                    android:textSize="38sp" android:textStyle="bold"/>
+
 
  				        <TextView
  				            android:id="@+id/TextView_r3"
  				            android:text="@string/kwh_symbol"
  				            android:textSize="13sp" />
 
+
  				        <TextView
  				            android:id="@+id/TextView_r4"
  				            android:gravity="right"
- 				            android:text="2.45"
- 				            android:textSize="30sp"
- 				            android:textStyle="bold" />
+                    android:text=""
+                    android:textSize="30sp" android:textStyle="bold"/>
 
  				        <TextView
  				            android:id="@+id/TextView_r5"
- 				            android:text=" zł"
- 				            android:textSize="13sp" />
+                    android:text=""
+                    android:textSize="13sp" />
 
  				        <TextView
  				            android:id="@+id/TextView_r6"
  				            android:gravity="right"
- 				            android:text="20%"
+                    android:text="@string/percent_symbol"
  				            android:textColor="#ff0000"
  				            android:textSize="25sp" />
 
@@ -161,6 +164,7 @@
  				            android:layout_height="20sp"
  				            android:layout_gravity="center"
  				            android:layout_marginTop="3dp"
+                    android:contentDescription="@string/arrow"
  				            android:src="@drawable/red_arrow" />
  				    </TableRow>
 
@@ -175,34 +179,34 @@
  				            android:textColor="#FFFFFF"
  				            android:textSize="25sp" />
 
+
  				        <TextView
  				            android:id="@+id/TextView_rd2"
  				            android:gravity="right"
- 				            android:text="35.56"
- 				            android:textSize="30sp"
- 				            android:textStyle="bold" />
+		                    android:text=""
+		                    android:textSize="30sp" android:textStyle="bold"/>
+
 
  				        <TextView
  				            android:id="@+id/TextView_rd3"
  				            android:text="@string/kwh_symbol"
  				            android:textSize="13sp" />
-
  				        <TextView
  				            android:id="@+id/TextView_rd4"
  				            android:gravity="right"
- 				            android:text="23.45"
- 				            android:textSize="30sp"
- 				            android:textStyle="bold" />
+                    android:text=""
+                    android:textSize="30sp" android:textStyle="bold"/>
+
 
  				        <TextView
  				            android:id="@+id/TextView_rd5"
- 				            android:text=" zł"
- 				            android:textSize="13sp" />
+                    android:text=""
+                    android:textSize="13sp" />
 
  				        <TextView
  				            android:id="@+id/TextView_rd6"
  				            android:gravity="right"
- 				            android:text="10%"
+                    android:text="@string/percent_symbol"
  				            android:textColor="#00ff00"
  				            android:textSize="25sp" />
 
@@ -211,8 +215,10 @@
  				            android:layout_width="15dp"
  				            android:layout_height="20sp"
  				            android:layout_gravity="center|right"
- 				            android:layout_marginTop="3dp"
- 				            android:src="@drawable/green_arrow" />
+                    android:layout_marginTop="3dp"
+                    android:contentDescription="@string/arrow"
+                    android:src="@drawable/green_arrow" />
+
  				    </TableRow>
 
  				    <TableRow
@@ -226,34 +232,32 @@
  				            android:textColor="#FFFFFF"
  				            android:textSize="25sp" />
 
+
  				        <TextView
  				            android:id="@+id/TextView_rt2"
  				            android:gravity="right"
- 				            android:text="1235.5"
- 				            android:textSize="30sp"
- 				            android:textStyle="bold" />
+		                    android:text=""
+		                    android:textSize="30sp" android:textStyle="bold"/>
 
  				        <TextView
  				            android:id="@+id/TextView_rt3"
  				            android:text="@string/kwh_symbol"
  				            android:textSize="13sp" />
-
  				        <TextView
  				            android:id="@+id/TextView_rt4"
  				            android:gravity="right"
- 				            android:text="523.45"
- 				            android:textSize="30sp"
- 				            android:textStyle="bold" />
+                    android:text=""
+                    android:textSize="30sp" android:textStyle="bold"/>
 
  				        <TextView
  				            android:id="@+id/TextView_rt5"
- 				            android:text=" zł"
- 				            android:textSize="13sp" />
+                    android:text=""
+                    android:textSize="13sp" />
 
  				        <TextView
  				            android:id="@+id/TextView_rt6"
  				            android:gravity="right"
- 				            android:text="12%"
+                    android:text="@string/percent_symbol"
  				            android:textColor="#00ff00"
  				            android:textSize="25sp" />
 
@@ -263,7 +267,9 @@
  				            android:layout_height="20sp"
  				            android:layout_gravity="center"
  				            android:layout_marginTop="3dp"
+                    android:contentDescription="@string/arrow"
  				            android:src="@drawable/green_arrow" />
+
  				    </TableRow>
  				</TableLayout>
 				    

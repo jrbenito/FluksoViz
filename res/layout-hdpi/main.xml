@@ -6,8 +6,8 @@
 
 		<RelativeLayout
 		    xmlns:android="http://schemas.android.com/apk/res/android"
-		    android:id="@+id/RelativeLayout01" 
-		    android:layout_width="fill_parent" 
+		    android:id="@+id/RelativeLayout01"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content">
 		    	<TextView
 		            android:id="@+id/textView01"
@@ -15,14 +15,13 @@
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentLeft="true"
 		            android:text="@string/general_debug" />
-		    
-		
+
 		        <TextView
 		            android:id="@+id/textView2"
 		            android:layout_width="wrap_content"
 		            android:layout_height="wrap_content"
 		            android:layout_alignParentRight="true"
-		            android:text="2011-11-09 12:00" />
+		            android:text="" />
 		</RelativeLayout>
 
 		<RelativeLayout
@@ -32,13 +31,14 @@
 		    android:layout_height="wrap_content"
 		    android:layout_marginTop="-23dp"
 		    android:gravity="center" >
-		
+
 		       <TextView
-	    		    android:id="@+id/textView1"
-	    		    android:layout_width="wrap_content"
-	    		    android:layout_height="wrap_content"
-	    		    android:text="1234"
-	    		    android:textColor="#FFFFFF"
+		           android:id="@+id/textView1"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:layout_centerInParent="true"
+		           android:text="@string/dashDisp"
+		           android:textColor="#FFFFFF"
 	    		    android:textSize="115sp" />
 
 		       <TextView
@@ -51,57 +51,53 @@
 		           android:text="@string/watt_symbol"
 		           android:textColor="#FFFFFF"
 		           android:textSize="23sp" />
-		       
+
 		       <TextView
-		             android:id="@+id/textView_delta"
-		             android:layout_width="wrap_content"
-		             android:layout_height="wrap_content"
-		             android:layout_alignRight="@+id/textView4"
-		             android:layout_centerVertical="true"
-		             android:text="d"
-		             android:textColor="#FFFFFF"
+		           android:id="@+id/textView_delta"
+		           android:layout_width="wrap_content"
+		           android:layout_height="wrap_content"
+		           android:layout_alignRight="@+id/textView4"
+		           android:layout_centerVertical="true"
+		           android:text=""
+		           android:textColor="#FFFFFF"
 		             android:textSize="22sp" />
 
 		       <TextView
 		           android:id="@+id/textView_p3"
 		           android:layout_width="wrap_content"
 		           android:layout_height="wrap_content"
+		           android:layout_alignParentRight="true"
 		           android:layout_alignParentTop="true"
-		           android:layout_marginTop="30dp"
 		           android:layout_alignRight="@+id/textView_delta"
-		           android:textColor="#000000"
-		           android:text="0w"
-		           android:textAppearance="?android:attr/textAppearanceSmall" />
+		           android:layout_marginTop="52dp"
+		           android:text="@string/watt_symbol"
+		           android:textAppearance="?android:attr/textAppearanceSmall"
+		           android:textColor="#000000" />
 
 	           <TextView
 	               android:id="@+id/textView_p2"
 	               android:layout_width="wrap_content"
 	               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 	               android:layout_alignRight="@+id/textView_p3"
 	               android:layout_below="@+id/textView_p3"
-	               android:textColor="#000000"
-	               android:text="0w"
-	               android:textAppearance="?android:attr/textAppearanceSmall" />
-	           
+	               android:text="@string/watt_symbol"
+	               android:textAppearance="?android:attr/textAppearanceSmall"
+	               android:textColor="#000000" />
+
 	           <TextView
 	               android:id="@+id/textView_p1"
 	               android:layout_width="wrap_content"
 	               android:layout_height="wrap_content"
+	               android:layout_alignParentRight="true"
 	               android:layout_alignRight="@+id/textView_p2"
 	               android:layout_below="@+id/textView_p2"
-	               android:textColor="#000000"
-	               android:text="0w"
-	               android:textAppearance="?android:attr/textAppearanceSmall" />
-	           
-	           
-	           
-	           
-	           
+	               android:text="@string/watt_symbol"
+	               android:textAppearance="?android:attr/textAppearanceSmall"
+	               android:textColor="#000000" />
 
 		</RelativeLayout>
-		    
-    	
-    
+
     <com.androidplot.xy.XYPlot
         android:id="@+id/Plot1"
         android:layout_width="fill_parent"
@@ -110,7 +106,7 @@
         android:layout_marginRight="0px"
         android:layout_marginTop="-12sp"
         title="      Power (W) - last minute - 3 phases       " />
-    
+
         <com.androidplot.xy.XYPlot
         android:id="@+id/Plot2"
         android:layout_width="fill_parent"
@@ -140,13 +136,13 @@
                     android:textSize="18sp" />
 
                     <TableLayout
-			            android:id="@+id/tableLayout2"
-			            android:layout_width="wrap_content"
-			            android:layout_height="wrap_content"
-			            android:shrinkColumns="*" >
-			            
+                        android:id="@+id/tableR1Layout2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:shrinkColumns="*" >
+
 	                 <TableRow
-	                     android:id="@+id/tableRow1"
+	                     android:id="@+id/tableR1Row1"
 	                     android:layout_width="wrap_content"
 	                     android:layout_height="wrap_content"
 	                     android:gravity="right" >
@@ -154,7 +150,7 @@
 		                <TextView
 		                    android:id="@+id/TextView_r2"
 		                    android:gravity="right"
-		                    android:text="20.00"
+		                    android:text=""
 		                    android:textSize="22sp" android:textStyle="bold"/>
 		                 <TextView
 		                    android:id="@+id/TextView_r3"
@@ -163,7 +159,7 @@
 		               </TableRow>
 
 		                <TableRow
-		                    android:id="@+id/tableRow1"
+		                    android:id="@+id/tableR1Row2"
 		                    android:layout_width="wrap_content"
 		                    android:layout_height="wrap_content"
 		                    android:layout_marginTop="-7sp"
@@ -172,7 +168,7 @@
 		                <TextView
 		                    android:id="@+id/TextView_r22"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="9sp" />
 		                 <TextView
 		                    android:id="@+id/TextView_r33"
@@ -180,23 +176,23 @@
 		                    android:textSize="9sp" />
 		               </TableRow>
 					</TableLayout>
-               
+
 
                 <TextView
                     android:id="@+id/TextView_r4"
                     android:gravity="right"
-                    android:text="0.00"
+                    android:text=""
                     android:textSize="22sp" android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/TextView_r5"
-                    android:text=" PLN"
+                    android:text=""
                     android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/TextView_r6"
                     android:gravity="right"
-                    android:text="20%"
+                    android:text="@string/percent_symbol"
                     android:textColor="#ff0000"
                     android:textSize="18sp" />
 
@@ -206,6 +202,7 @@
                     android:layout_height="15sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="10dp"
+                    android:contentDescription="@string/arrow"
                     android:src="@drawable/red_arrow" />
 
 		        </TableRow>
@@ -221,22 +218,22 @@
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 
-                 <TableLayout
-			            android:id="@+id/tableLayout2"
-			            android:layout_width="fill_parent"
-			            android:layout_height="wrap_content"
-			            android:shrinkColumns="*" >
+                <TableLayout
+                    android:id="@+id/tableR2Layout2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:shrinkColumns="*" >
 
 	                 <TableRow
-	                     android:id="@+id/tableRow1"
+	                     android:id="@+id/tableR2Row1"
 	                     android:layout_width="wrap_content"
 	                     android:layout_height="wrap_content"
 	                     android:gravity="right" >
-		                 
+
 		               <TextView
 		                    android:id="@+id/TextView_rd2"
 		                    android:gravity="right"
-		                    android:text="123"
+		                    android:text=""
 		                    android:textSize="22sp" android:textStyle="bold"/>
 
                 		<TextView
@@ -246,7 +243,7 @@
 		             </TableRow>
 
 		             <TableRow
-		                 android:id="@+id/tableRow1"
+		                 android:id="@+id/tableR2Row2"
 		                 android:layout_width="wrap_content"
 		                 android:layout_height="wrap_content"
 		                 android:layout_marginTop="-7sp"
@@ -255,34 +252,30 @@
 					      <TextView
 		                    android:id="@+id/TextView_rd22"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="9sp" />
  			              <TextView
 		                    android:id="@+id/TextView_rd33"
 		                    android:text="@string/watt_symbol"
 		                    android:textSize="9sp" />
-		               </TableRow>
-					</TableLayout>
-                
-                
-                
-              
+		             </TableRow>
+				</TableLayout>
 
                 <TextView
                     android:id="@+id/TextView_rd4"
                     android:gravity="right"
-                    android:text="0.00"
+                    android:text=""
                     android:textSize="22sp" android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/TextView_rd5"
-                    android:text=" PLN"
+                    android:text=""
                     android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/TextView_rd6"
                     android:gravity="right"
-                    android:text="10%"
+                    android:text="@string/percent_symbol"
                     android:textColor="#00ff00"
                     android:textSize="18sp" />
 
@@ -291,7 +284,10 @@
                     android:layout_width="15dp"
                     android:layout_height="15sp"
                     android:layout_gravity="right|top"
-                    android:src="@drawable/green_arrow" android:layout_marginTop="10dp"/>
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="@string/arrow"
+                    android:src="@drawable/green_arrow" />
+
 		        </TableRow>
 
 		        <TableRow
@@ -304,14 +300,15 @@
                     android:text="@string/month"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
+
 					<TableLayout
-			            android:id="@+id/tableLayout2"
-			            android:layout_width="fill_parent"
-			            android:layout_height="wrap_content"
-			            android:shrinkColumns="*" >
+					    android:id="@+id/tableR3Layout2"
+					    android:layout_width="fill_parent"
+					    android:layout_height="wrap_content"
+					    android:shrinkColumns="*" >
 
 	                 <TableRow
-	                     android:id="@+id/tableRow1"
+	                     android:id="@+id/tableR3Row1"
 	                     android:layout_width="wrap_content"
 	                     android:layout_height="wrap_content"
 	                     android:gravity="right" >
@@ -319,7 +316,7 @@
 		                <TextView
 		                    android:id="@+id/TextView_rt2"
 		                    android:gravity="right"
-		                    android:text="0.0"
+		                    android:text=""
 		                    android:textSize="22sp" android:textStyle="bold"/>
 
               		 	<TextView
@@ -329,7 +326,7 @@
 		             </TableRow>
 
 		             <TableRow
-		                 android:id="@+id/tableRow1"
+		                 android:id="@+id/tableR3Row2"
 		                 android:layout_width="wrap_content"
 		                 android:layout_height="wrap_content"
 		                 android:layout_marginTop="-7sp"
@@ -338,7 +335,7 @@
 					      <TextView
 		                    android:id="@+id/TextView_rt22"
 		                    android:gravity="right"
-		                    android:text="0.00"
+		                    android:text=""
 		                    android:textSize="9sp" />
  			              <TextView
 		                    android:id="@+id/TextView_rt33"
@@ -346,23 +343,22 @@
 		                    android:textSize="9sp" />
 		               </TableRow>
 					</TableLayout>
-               
 
                 <TextView
                     android:id="@+id/TextView_rt4"
                     android:gravity="right"
-                    android:text="0.0"
+                    android:text=""
                     android:textSize="22sp" android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/TextView_rt5"
-                    android:text=" PLN"
+                    android:text=""
                     android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/TextView_rt6"
                     android:gravity="right"
-                    android:text="x%"
+                    android:text="@string/percent_symbol"
                     android:textColor="#00ff00"
                     android:textSize="18sp" />
 
@@ -372,7 +368,9 @@
                     android:layout_height="15sp"
                     android:layout_gravity="right|top"
                     android:layout_marginTop="10dp"
+                    android:contentDescription="@string/arrow"
                     android:src="@drawable/green_arrow" />
+
 		        </TableRow>
 		</TableLayout>
 
