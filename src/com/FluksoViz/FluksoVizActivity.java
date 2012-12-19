@@ -1472,8 +1472,8 @@ public class FluksoVizActivity extends Activity {
 		HttpConnectionParams.setSoTimeout(httpParams, 5000);
 
 		Date d = new Date();
-    	long moja_data = d.getTime() +(d.getTimezoneOffset()*60*1000);
-    	d = new Date(moja_data) ;
+    	long moja_data = d.getTime() +(d.getTimezoneOffset()*60*1000); // calculate data/time (milliseconds) at UTC ??
+    	d.setTime(moja_data) ;
 		
 		
     	d.setHours(00);
