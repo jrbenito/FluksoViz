@@ -141,7 +141,11 @@ public class FluksoVizActivity extends Activity {
 
 	Context context;
 
+	// Graphic areas
 	XYPlot Plot1, Plot2;
+	private static final int MAX_PLOT1_CLICK = 2; // max number of different actions
+												  // for a onClick event of plot1 area
+	
 	LinkedList<Number> series1linkedlist, series2linkedlist_neg,
 			series2linkedlist, series3linkedlist, seriesSUM12linkedlist,
 			seriesSUM123linkedlist;
@@ -361,21 +365,14 @@ public class FluksoVizActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 
-				switch (plot1_mode) {
-				case 0:
-					plot1_mode = 1;
-					break;
-				case 1:
-					plot1_mode = 2;
-					break;
-				case 2:
+				/*
+				 * Change the switch block to an increment and one 
+				 * if statement. Also, avoid magic numbers
+				 */
+				plot1_mode++;
+				if (plot1_mode > MAX_PLOT1_CLICK)
 					plot1_mode = 0;
-					break;
-				default:
-					plot1_mode = 0;
-					break;
-				}
-				;
+
 				switch (sensor_number) {
 				case 1:
 				case 2:
@@ -392,9 +389,9 @@ public class FluksoVizActivity extends Activity {
 					}
 					case 1: {
 						Plot1.setTitle("Power (W) - last minute -  with details");
-						tv_p1.setVisibility(TextView.VISIBLE);
-						tv_p2.setVisibility(TextView.VISIBLE);
-						tv_p3.setVisibility(TextView.VISIBLE);
+						Plot1.redraw(); // update title even if series are not updating (like in set prefs)
+						
+						setDetailsVisibility(true); // show details
 						break;
 					}
 					case 2: {
@@ -402,9 +399,8 @@ public class FluksoVizActivity extends Activity {
 						Plot1.removeSeries(series2m);
 						Plot1.removeSeries(series1m);
 						Plot1.redraw();
-						tv_p1.setVisibility(TextView.INVISIBLE);
-						tv_p2.setVisibility(TextView.INVISIBLE);
-						tv_p3.setVisibility(TextView.INVISIBLE);
+						
+						setDetailsVisibility(false); // hide details
 						break;
 					}
 					}
@@ -419,10 +415,9 @@ public class FluksoVizActivity extends Activity {
 					}
 					case 1: {
 						Plot1.setTitle("Power (W) - last minute -  with details");
-						Plot1.redraw();
-						tv_p1.setVisibility(TextView.VISIBLE);
-						tv_p2.setVisibility(TextView.VISIBLE);
-						tv_p3.setVisibility(TextView.VISIBLE);
+						Plot1.redraw(); // This update plot title even if the series update is stoped
+
+						setDetailsVisibility(true); // show details
 						break;
 					}
 					case 2: {
@@ -430,9 +425,8 @@ public class FluksoVizActivity extends Activity {
 						// Plot1.removeSeries(series2m);
 						// Plot1.removeSeries(series1m);
 						Plot1.redraw();
-						tv_p1.setVisibility(TextView.INVISIBLE);
-						tv_p2.setVisibility(TextView.INVISIBLE);
-						tv_p3.setVisibility(TextView.INVISIBLE);
+						
+						setDetailsVisibility(false); // hide details
 						break;
 					}
 					}
@@ -442,6 +436,7 @@ public class FluksoVizActivity extends Activity {
 
 			}
 		});
+		
 
 		series1m.setModel(series1linkedlist,
 				SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED);
@@ -564,6 +559,24 @@ public class FluksoVizActivity extends Activity {
 		// The activity has become visible (it is now "resumed").
 	}
 
+	/*
+	 * This method is used to set the visibility of detailed
+	 * information of each phase consuption
+	 */
+	private void setDetailsVisibility(boolean visible) {
+		
+		if (visible) {
+			tv_p1.setVisibility(TextView.VISIBLE);
+			tv_p2.setVisibility(TextView.VISIBLE);
+			tv_p3.setVisibility(TextView.VISIBLE);
+		} else {
+			tv_p1.setVisibility(TextView.INVISIBLE);
+			tv_p2.setVisibility(TextView.INVISIBLE);
+			tv_p3.setVisibility(TextView.INVISIBLE);
+		}
+		
+	};
+	
 	final Runnable r1s = new Runnable() {
 		public void run() {
 			showTime(Napis2);
@@ -849,7 +862,8 @@ public class FluksoVizActivity extends Activity {
 
 		}
 	};
-
+	
+	
 	final Runnable r2 = new Runnable() {
 		public void run() {
 
