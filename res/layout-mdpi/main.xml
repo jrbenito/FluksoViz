@@ -15,14 +15,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="@string/general_debug" />
+            android:text="@string/general_debug"
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="" />
+            android:text=""
+            android:textSize="11sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -40,7 +43,7 @@
             android:layout_centerInParent="true"
             android:text="@string/dashDisp"
             android:textColor="#FFFFFF"
-            android:textSize="180sp" />
+            android:textSize="100sp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -51,7 +54,7 @@
             android:layout_toRightOf="@+id/textView1"
             android:text="@string/watt_symbol"
             android:textColor="#FFFFFF"
-            android:textSize="40sp" />
+            android:textSize="23sp" />
 
         <TextView
             android:id="@+id/textView_delta"
@@ -73,7 +76,8 @@
             android:layout_marginTop="52dp"
             android:text="@string/watt_symbol"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/textView_p2"
@@ -84,7 +88,8 @@
             android:layout_below="@+id/textView_p3"
             android:text="@string/watt_symbol"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/textView_p1"
@@ -95,13 +100,15 @@
             android:layout_below="@+id/textView_p2"
             android:text="@string/watt_symbol"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="11sp" />
+
     </RelativeLayout>
 
     <com.androidplot.xy.XYPlot
         android:id="@+id/Plot1"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="110dp"
         android:layout_marginLeft="-14px"
         android:layout_marginRight="-7px"
         android:layout_marginTop="-8px"
@@ -110,7 +117,7 @@
     <com.androidplot.xy.XYPlot
         android:id="@+id/Plot2"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="110dp"
         android:layout_marginLeft="-14px"
         android:layout_marginRight="-7px"
         android:layout_marginTop="0px"
@@ -134,7 +141,7 @@
                 android:id="@+id/textView_r1"
                 android:text="@string/today"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <TableLayout
                 android:id="@+id/tableR1Layout2"
@@ -158,7 +165,7 @@
                     <TextView
                         android:id="@+id/TextView_r3"
                         android:text="@string/kwh_symbol"
-                        android:textSize="13sp" />
+                        android:textSize="11sp" />
                 </TableRow>
 
                 <TableRow
@@ -177,7 +184,7 @@
                     <TextView
                         android:id="@+id/TextView_r33"
                         android:text="@string/watt_symbol"
-                        android:textSize="11sp" />
+                        android:textSize="9sp" />
                 </TableRow>
             </TableLayout>
 
@@ -198,12 +205,12 @@
                 android:gravity="right"
                 android:text="@string/percent_symbol"
                 android:textColor="#ff0000"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/arrow_image1"
                 android:layout_width="15dp"
-                android:layout_height="20sp"
+                android:layout_height="15dp"
                 android:layout_gravity="right|top"
                 android:layout_marginTop="14dp"
                 android:contentDescription="@string/arrow"
@@ -220,7 +227,7 @@
                 android:id="@+id/textView_rd1"
                 android:text="@string/week"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <TableLayout
                 android:id="@+id/tableR2Layout2"
@@ -244,7 +251,7 @@
                     <TextView
                         android:id="@+id/TextView_rd3"
                         android:text="@string/kwh_symbol"
-                        android:textSize="13sp" />
+                        android:textSize="11sp" />
                 </TableRow>
 
                 <TableRow
@@ -263,7 +270,7 @@
                     <TextView
                         android:id="@+id/TextView_rd33"
                         android:text="@string/watt_symbol"
-                        android:textSize="11sp" />
+                        android:textSize="9sp" />
                 </TableRow>
             </TableLayout>
 
@@ -284,12 +291,12 @@
                 android:gravity="right"
                 android:text="@string/percent_symbol"
                 android:textColor="#00ff00"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/arrow_image2"
                 android:layout_width="15dp"
-                android:layout_height="20sp"
+                android:layout_height="15dp"
                 android:layout_gravity="right|top"
                 android:layout_marginTop="14dp"
                 android:contentDescription="@string/arrow"
@@ -306,7 +313,7 @@
                 android:id="@+id/textView_rt1"
                 android:text="@string/month"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <TableLayout
                 android:id="@+id/tableR3Layout2"
@@ -330,7 +337,7 @@
                     <TextView
                         android:id="@+id/TextView_rt3"
                         android:text="@string/kwh_symbol"
-                        android:textSize="13sp" />
+                        android:textSize="11sp" />
                 </TableRow>
 
                 <TableRow
@@ -349,7 +356,7 @@
                     <TextView
                         android:id="@+id/TextView_rt33"
                         android:text="@string/watt_symbol"
-                        android:textSize="11sp" />
+                        android:textSize="9sp" />
                 </TableRow>
             </TableLayout>
 
@@ -370,12 +377,12 @@
                 android:gravity="right"
                 android:text="@string/percent_symbol"
                 android:textColor="#00ff00"
-                android:textSize="25sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/arrow_image3"
                 android:layout_width="15dp"
-                android:layout_height="20sp"
+                android:layout_height="15dp"
                 android:layout_gravity="right|top"
                 android:layout_marginTop="14dp"
                 android:contentDescription="@string/arrow"

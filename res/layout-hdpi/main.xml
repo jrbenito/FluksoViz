@@ -22,7 +22,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:text="" />
+            android:text=""
+            android:textSize="11sp" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -40,7 +42,7 @@
             android:layout_centerInParent="true"
             android:text="@string/dashDisp"
             android:textColor="#FFFFFF"
-            android:textSize="115sp" />
+            android:textSize="113sp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -73,7 +75,8 @@
             android:layout_marginTop="52dp"
             android:text="@string/watt_symbol"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/textView_p2"
@@ -84,7 +87,8 @@
             android:layout_below="@+id/textView_p3"
             android:text="@string/watt_symbol"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/textView_p1"
@@ -95,13 +99,15 @@
             android:layout_below="@+id/textView_p2"
             android:text="@string/watt_symbol"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:textSize="11sp" />
+
     </RelativeLayout>
 
     <com.androidplot.xy.XYPlot
         android:id="@+id/Plot1"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="115dp"
         android:layout_marginLeft="-20px"
         android:layout_marginRight="0px"
         android:layout_marginTop="-12sp"
@@ -110,7 +116,7 @@
     <com.androidplot.xy.XYPlot
         android:id="@+id/Plot2"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="115dp"
         android:layout_marginLeft="-20px"
         android:layout_marginRight="0px"
         android:layout_marginTop="0px"
