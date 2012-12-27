@@ -152,7 +152,7 @@
                         android:id="@+id/TextView_r2"
                         android:gravity="right"
                         android:text=""
-                        android:textSize="38sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -185,7 +185,7 @@
                 android:id="@+id/TextView_r4"
                 android:gravity="right"
                 android:text=""
-                android:textSize="38sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -238,7 +238,7 @@
                         android:id="@+id/TextView_rd2"
                         android:gravity="right"
                         android:text=""
-                        android:textSize="38sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -271,7 +271,7 @@
                 android:id="@+id/TextView_rd4"
                 android:gravity="right"
                 android:text=""
-                android:textSize="38sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -324,7 +324,7 @@
                         android:id="@+id/TextView_rt2"
                         android:gravity="right"
                         android:text=""
-                        android:textSize="38sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -357,7 +357,7 @@
                 android:id="@+id/TextView_rt4"
                 android:gravity="right"
                 android:text=""
-                android:textSize="38sp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
 
             <TextView

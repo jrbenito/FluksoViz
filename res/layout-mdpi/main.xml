@@ -159,7 +159,7 @@
                         android:id="@+id/TextView_r2"
                         android:gravity="right"
                         android:text=""
-                        android:textSize="30sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -192,20 +192,20 @@
                 android:id="@+id/TextView_r4"
                 android:gravity="right"
                 android:text=""
-                android:textSize="30sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TextView_r5"
                 android:text=""
-                android:textSize="13sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/TextView_r6"
                 android:gravity="right"
                 android:text="@string/percent_symbol"
                 android:textColor="#ff0000"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/arrow_image1"
@@ -245,7 +245,7 @@
                         android:id="@+id/TextView_rd2"
                         android:gravity="right"
                         android:text=""
-                        android:textSize="30sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -278,20 +278,20 @@
                 android:id="@+id/TextView_rd4"
                 android:gravity="right"
                 android:text=""
-                android:textSize="30sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TextView_rd5"
                 android:text=""
-                android:textSize="13sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/TextView_rd6"
                 android:gravity="right"
                 android:text="@string/percent_symbol"
                 android:textColor="#00ff00"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/arrow_image2"
@@ -331,7 +331,7 @@
                         android:id="@+id/TextView_rt2"
                         android:gravity="right"
                         android:text=""
-                        android:textSize="30sp"
+                        android:textSize="15sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -364,20 +364,20 @@
                 android:id="@+id/TextView_rt4"
                 android:gravity="right"
                 android:text=""
-                android:textSize="30sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/TextView_rt5"
                 android:text=""
-                android:textSize="13sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/TextView_rt6"
                 android:gravity="right"
                 android:text="@string/percent_symbol"
                 android:textColor="#00ff00"
-                android:textSize="18sp" />
+                android:textSize="15sp" />
 
             <ImageView
                 android:id="@+id/arrow_image3"
