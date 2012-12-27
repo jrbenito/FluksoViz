@@ -458,51 +458,57 @@ public class FluksoVizActivity extends Activity {
 			thread_updater2.start();
 		} else {
 			run_network_token_test();
+			String threadToStart[] = {"Thread1","Thread2","Both"};
 			// Alert dialog when application starts
 			new AlertDialog.Builder(this)
 					.setTitle(R.string.nw_chk_results)
-					.setMessage(network_checks_results)
+					//.setMessage(network_checks_results)
 					.setIcon(android.R.drawable.ic_menu_agenda)
-					.setPositiveButton(R.string.run_both_th_local_remote,
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int which) {
-									thread_updater1s.start();
-									thread_updater2.start();
-								}
-							})
-					.setNeutralButton(R.string.run_just_local_th,
-							new DialogInterface.OnClickListener() {
-								public void onClick(DialogInterface dialog,
-										int which) {
-									thread_updater1s.start();
-									Plot2.setTitle(getString(R.string.disabled));
-									tv_today_kwh
-											.setVisibility(TextView.INVISIBLE);
-									tv_today_cost
-											.setVisibility(TextView.INVISIBLE);
-									tv_today_percent
-											.setVisibility(TextView.INVISIBLE);
-									tv_today_avg
-											.setVisibility(TextView.INVISIBLE);
-									tv_week_kwh
-											.setVisibility(TextView.INVISIBLE);
-									tv_week_avg
-											.setVisibility(TextView.INVISIBLE);
-									tv_week_cost
-											.setVisibility(TextView.INVISIBLE);
-									tv_week_percent
-											.setVisibility(TextView.INVISIBLE);
-									tv_month_kwh
-											.setVisibility(TextView.INVISIBLE);
-									tv_month_avg
-											.setVisibility(TextView.INVISIBLE);
-									tv_month_cost
-											.setVisibility(TextView.INVISIBLE);
-									tv_month_percent
-											.setVisibility(TextView.INVISIBLE);
-								}
-							})
+					.setItems(threadToStart, new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							// The 'which' argument contains the index position
+							// of the selected item
+							switch (which) {
+							case 0:
+								thread_updater1s.start();
+								Plot2.setTitle(getString(R.string.disabled));
+								tv_today_kwh
+										.setVisibility(TextView.INVISIBLE);
+								tv_today_cost
+										.setVisibility(TextView.INVISIBLE);
+								tv_today_percent
+										.setVisibility(TextView.INVISIBLE);
+								tv_today_avg
+										.setVisibility(TextView.INVISIBLE);
+								tv_week_kwh
+										.setVisibility(TextView.INVISIBLE);
+								tv_week_avg
+										.setVisibility(TextView.INVISIBLE);
+								tv_week_cost
+										.setVisibility(TextView.INVISIBLE);
+								tv_week_percent
+										.setVisibility(TextView.INVISIBLE);
+								tv_month_kwh
+										.setVisibility(TextView.INVISIBLE);
+								tv_month_avg
+										.setVisibility(TextView.INVISIBLE);
+								tv_month_cost
+										.setVisibility(TextView.INVISIBLE);
+								tv_month_percent
+										.setVisibility(TextView.INVISIBLE);
+								break;
+							
+							case 1:
+								thread_updater2.start();
+								break;
+							case 2:
+								thread_updater1s.start();
+								thread_updater2.start();
+								break;
+							}
+						}
+					})
+
 					.setNegativeButton(R.string.let_me_fix_the_prefs_first,
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
