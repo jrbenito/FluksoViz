@@ -507,7 +507,6 @@ public class FluksoVizActivity extends Activity {
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
-
 								}
 							}).show();
 		} // end of if for skip initial tests
@@ -844,13 +843,11 @@ public class FluksoVizActivity extends Activity {
 				}
 				}
 
-				Plot1.setDomainValueFormat(new DateFormat_p1()); // sets the
-																	// domain
-																	// dates to
-																	// nice 2
-																	// values of
-																	// hh:mm
-																	// format
+				/*
+				 * Sets the domain dates to nice 2 values of hh:mm format
+				 */
+				Plot1.setDomainValueFormat(new DateFormat_p1()); 
+				
 				fix_graph_Y_font(Plot1);
 				Plot1.redraw();
 
@@ -868,6 +865,7 @@ public class FluksoVizActivity extends Activity {
 		public void run() {
 
 			double today_avg_watt;
+			String numbers;
 			series_p2_1.setModel(series_daySUM_linkedlist,
 					SimpleXYSeries.ArrayFormat.XY_VALS_INTERLEAVED);
 
@@ -901,30 +899,24 @@ public class FluksoVizActivity extends Activity {
 				iv1.setImageResource(R.drawable.red_arrow);
 			}
 
-			DecimalFormat df = setDecimalFormatProcent(today_percent);
-			df.setMaximumFractionDigits(2);
-			tv_today_percent.setText("" + df.format(today_percent)
-					+ R.string.percent_symbol);
+			numbers = setDecimalFormatProcent(today_percent);
+			tv_today_percent.setText("" + numbers + "%");// Problem with resource + R.string.percent_symbol);
 
-			DecimalFormat df2 = setDecimalFormat((today_avg_watt * 24 / 1000));
-			tv_today_kwh
-					.setText(" " + df2.format((today_avg_watt * 24 / 1000)));
+			numbers = setDecimalFormat((today_avg_watt * 24 / 1000));
+			tv_today_kwh.setText(" " + numbers);
+			
 			DecimalFormat df_avg = new DecimalFormat("####");
 			tv_today_avg.setText("" + df_avg.format(today_avg_watt));
 
-			DecimalFormat df21 = setDecimalFormat(((today_avg_watt * 24 / 1000) * (cost_perkwh))
+			numbers = setDecimalFormat(((today_avg_watt * 24 / 1000) * (cost_perkwh))
 					+ (cost_fixedpart / 30));
-			tv_today_cost
-					.setText(" "
-							+ df21.format(((today_avg_watt * 24 / 1000) * (cost_perkwh))
-									+ (cost_fixedpart / 30)));
+			tv_today_cost.setText(" " + numbers);
 
 			suma = 0; // getting last 7 days form the monthly readout.
 			for (int num = series_monthSUM_linkedlist.size() - 14; num < series_monthSUM_linkedlist
 					.size(); num++) {
 				if (num % 2 != 0) {
-					suma = suma
-							+ series_monthSUM_linkedlist.get(num).intValue();
+					suma = suma + series_monthSUM_linkedlist.get(num).intValue();
 					// tv_week_avg.append(" "+ num);
 				}
 			}
@@ -934,16 +926,12 @@ public class FluksoVizActivity extends Activity {
 			double week_avg_watt = suma / 7;
 			tv_week_avg.setText("" + df_avg.format(week_avg_watt));
 
-			DecimalFormat df3 = setDecimalFormat((week_avg_watt * 24 * 7 / 1000));
-			tv_week_kwh.setText(" "
-					+ df3.format((week_avg_watt * 24 * 7 / 1000)));
+			numbers = setDecimalFormat((week_avg_watt * 24 * 7 / 1000));
+			tv_week_kwh.setText(" " + numbers);
 
-			DecimalFormat df4 = setDecimalFormat(((week_avg_watt * 24 * 7 / 1000) * (cost_perkwh))
+			numbers = setDecimalFormat(((week_avg_watt * 24 * 7 / 1000) * (cost_perkwh))
 					+ ((cost_fixedpart / 30) * 7));
-			tv_week_cost
-					.setText(" "
-							+ df4.format(((week_avg_watt * 24 * 7 / 1000) * (cost_perkwh))
-									+ ((cost_fixedpart / 30) * 7)));
+			tv_week_cost.setText(" " + numbers);
 
 			suma = 0; // getting last previous 7 days form the monthly readout.
 			for (int num = series_monthSUM_linkedlist.size() - 26; num < series_monthSUM_linkedlist
@@ -966,10 +954,9 @@ public class FluksoVizActivity extends Activity {
 				tv_week_percent.setTextColor(Color.RED);
 				iv2.setImageResource(R.drawable.red_arrow);
 			}
-			DecimalFormat df5 = setDecimalFormatProcent(week_percent);
-			df5.setMaximumFractionDigits(2);
-			tv_week_percent.setText("" + df5.format(week_percent)
-					+ R.string.percent_symbol);
+			String df5 = setDecimalFormatProcent(week_percent);
+			
+			tv_week_percent.setText("" + df5 + "%"); // + R.string.percent_symbol);
 
 			suma = 0; // getting last 30 days form the monthly readout.
 			for (int num = series_monthSUM_linkedlist.size() - 60; num < series_monthSUM_linkedlist
@@ -978,22 +965,17 @@ public class FluksoVizActivity extends Activity {
 					suma = suma
 							+ series_monthSUM_linkedlist.get(num).intValue();
 				}
-			}
-			;
+			};
+			
 			double month_avg_watt = suma / 30;
 			tv_month_avg.setText("" + df_avg.format(month_avg_watt));
 
-			DecimalFormat df6 = setDecimalFormat((month_avg_watt * 24 * 30 / 1000));
-			df6.setMaximumFractionDigits(2);
-			tv_month_kwh.setText(" "
-					+ df6.format((month_avg_watt * 24 * 30 / 1000)));
+			numbers = setDecimalFormat((month_avg_watt * 24 * 30 / 1000));
+			tv_month_kwh.setText(" " + numbers);
 
-			DecimalFormat df7 = setDecimalFormat(((month_avg_watt * 24 * 30 / 1000) * (cost_perkwh))
+			numbers = setDecimalFormat(((month_avg_watt * 24 * 30 / 1000) * (cost_perkwh))
 					+ (cost_fixedpart));
-			tv_month_cost
-					.setText(" "
-							+ df7.format(((month_avg_watt * 24 * 30 / 1000) * (cost_perkwh))
-									+ (cost_fixedpart)));
+			tv_month_cost.setText(" " + numbers);
 
 			suma = 0; // getting last previous 30 days form the monthly readout.
 			for (int num = series_monthSUM_linkedlist.size() - 120; num < series_monthSUM_linkedlist
@@ -1016,9 +998,8 @@ public class FluksoVizActivity extends Activity {
 				tv_month_percent.setTextColor(Color.RED);
 				iv3.setImageResource(R.drawable.red_arrow);
 			}
-			DecimalFormat df8 = setDecimalFormatProcent(month_percent);
-			tv_month_percent.setText("" + df8.format(month_percent)
-					+ R.string.percent_symbol);
+			String df8 = setDecimalFormatProcent(month_percent);
+			tv_month_percent.setText("" + df8 + "%");// R.string.percent_symbol);
 
 			fix_graph_Y_font(Plot2);
 			Plot2.redraw();
@@ -1449,7 +1430,7 @@ public class FluksoVizActivity extends Activity {
 
 					thread2_running = true;
 					handler2.post(r2);
-					sleep(60000);
+					sleep(60000); // Sleep one minute before update
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -1855,7 +1836,7 @@ public class FluksoVizActivity extends Activity {
 	}
 
 	// Number Formatting
-	private DecimalFormat setDecimalFormat(double input_double) {
+	private String setDecimalFormat(double input_double) {
 		// Try Localized numbers and avoid "re-creation" of object
 		DecimalFormat df = new DecimalFormat(); // Localized decimal format
 		df.setMaximumIntegerDigits(5);
@@ -1876,11 +1857,11 @@ public class FluksoVizActivity extends Activity {
 		if (input_double < 10)
 			df.setMaximumIntegerDigits(2);
 
-		return df;
+		return df.format(input_double);
 	};
 
-	// Number formatting
-	private DecimalFormat setDecimalFormatProcent(double input_double) {
+	// Number formatting for percentage
+	private String setDecimalFormatProcent(double input_double) {
 		// Try Localized numbers and avoid "re-creation" of object
 		DecimalFormat df = new DecimalFormat();
 		df.setMaximumIntegerDigits(5);
@@ -1894,7 +1875,7 @@ public class FluksoVizActivity extends Activity {
 			df.setMaximumIntegerDigits(1);
 		}
 
-		return df;
+		return df.format(input_double);
 	};
 
 	private class DateFormat_p1 extends Format {
