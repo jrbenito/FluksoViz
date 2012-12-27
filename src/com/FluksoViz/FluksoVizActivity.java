@@ -2146,11 +2146,6 @@ public class FluksoVizActivity extends Activity {
 
 				if (phase1_testok == true & phase2_testok == true
 						& phase3_testok == true) {
-					// /now I start remote api tests
-					Boolean phase1_remoteTestOk = false;
-					Boolean phase2_remoteTestOk = false;
-					Boolean phase3_remoteTestOk = false;
-
 					switch (sensor_number) {
 					case 1: {
 						try {
@@ -2160,7 +2155,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_ok)
 									+ "\n";
-							phase1_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_token_wrong_)
@@ -2170,11 +2164,9 @@ public class FluksoVizActivity extends Activity {
 									+ getString(R.string.sensor_1_remote_server_api_token_wrong_)
 									+ "\n" + e.toString() + "\n ";
 						}
-						phase2_remoteTestOk = true;
 						network_checks_results = network_checks_results
 								+ getString(R.string.sensor_2_disabled_in_prefs)
 								+ "\n";
-						phase3_remoteTestOk = true;
 						network_checks_results = network_checks_results
 								+ getString(R.string.sensor_3_disabled_in_prefs)
 								+ "\n";
@@ -2190,7 +2182,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_ok)
 									+ "\n";
-							phase1_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_token_wrong_)
@@ -2207,7 +2198,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_ok)
 									+ "\n";
-							phase2_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_token_wrong_)
@@ -2218,7 +2208,6 @@ public class FluksoVizActivity extends Activity {
 									+ getString(R.string.sensor_2_remote_server_api_token_wrong_)
 									+ "\n" + e.toString() + "\n ";
 						}
-						phase3_remoteTestOk = true;
 						network_checks_results = network_checks_results
 								+ getString(R.string.sensor_3_disabled_in_prefs)
 								+ "\n";
@@ -2233,7 +2222,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_ok)
 									+ "\n";
-							phase1_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_token_wrong_)
@@ -2250,7 +2238,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_ok)
 									+ "\n";
-							phase2_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_token_wrong_)
@@ -2261,7 +2248,6 @@ public class FluksoVizActivity extends Activity {
 									+ getString(R.string.sensor_2_remote_server_api_token_wrong_)
 									+ "\n" + e.toString() + "\n";
 						}
-						phase3_remoteTestOk = true;
 						network_checks_results = network_checks_results
 								+ getString(R.string.sensor_3_disabled_in_prefs)
 								+ "\n";
@@ -2276,7 +2262,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_ok)
 									+ "\n";
-							phase1_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_1_remote_server_api_token_wrong_)
@@ -2293,7 +2278,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_ok)
 									+ "\n";
-							phase2_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_token_wrong_)
@@ -2311,7 +2295,6 @@ public class FluksoVizActivity extends Activity {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_2_remote_server_api_ok)
 									+ "\n";
-							phase3_remoteTestOk = true;
 						} catch (IOException e) {
 							network_checks_results = network_checks_results
 									+ getString(R.string.sensor_3_remote_server_api_token_wrong_)
