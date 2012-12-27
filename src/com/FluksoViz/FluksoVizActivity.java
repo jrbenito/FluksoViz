@@ -1903,7 +1903,7 @@ public class FluksoVizActivity extends Activity {
 		 * Silence the warning with default solution
 		 */
 		private static final long serialVersionUID = 1L;
-		private DateFormat dateFormat = DateFormat.getDateTimeInstance();
+		private DateFormat dateFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
 
 		@Override
 		public StringBuffer format(Object obj, StringBuffer toAppendTo,
