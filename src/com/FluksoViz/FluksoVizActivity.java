@@ -512,7 +512,6 @@ public class FluksoVizActivity extends Activity {
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int which) {
-									
 								}
 							}).show();
 		} // end of if for skip initial tests
@@ -831,13 +830,11 @@ public class FluksoVizActivity extends Activity {
 				}
 				}
 
-				Plot1.setDomainValueFormat(new DateFormat_p1()); // sets the
-																	// domain
-																	// dates to
-																	// nice 2
-																	// values of
-																	// hh:mm
-																	// format
+				/*
+				 * Sets the domain dates to nice 2 values of hh:mm format
+				 */
+				Plot1.setDomainValueFormat(new DateFormat_p1()); 
+				
 				fix_graph_Y_font(Plot1);
 				Plot1.redraw();
 
@@ -905,8 +902,7 @@ public class FluksoVizActivity extends Activity {
 			for (int num = series_monthSUM_linkedlist.size() - 14; num < series_monthSUM_linkedlist
 					.size(); num++) {
 				if (num % 2 != 0) {
-					suma = suma
-							+ series_monthSUM_linkedlist.get(num).intValue();
+					suma = suma + series_monthSUM_linkedlist.get(num).intValue();
 					// tv_week_avg.append(" "+ num);
 				}
 			}
@@ -955,8 +951,8 @@ public class FluksoVizActivity extends Activity {
 					suma = suma
 							+ series_monthSUM_linkedlist.get(num).intValue();
 				}
-			}
-			;
+			};
+			
 			double month_avg_watt = suma / 30;
 			tv_month_avg.setText("" + df_avg.format(month_avg_watt));
 
@@ -1420,7 +1416,7 @@ public class FluksoVizActivity extends Activity {
 
 					thread2_running = true;
 					handler2.post(r2);
-					sleep(60000);
+					sleep(60000); // Sleep one minute before update
 				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
@@ -1874,7 +1870,7 @@ public class FluksoVizActivity extends Activity {
 		 * Silence the warning with default solution
 		 */
 		private static final long serialVersionUID = 1L;
-		private DateFormat dateFormat = DateFormat.getDateTimeInstance();
+		private DateFormat dateFormat = DateFormat.getTimeInstance(DateFormat.SHORT);
 
 		@Override
 		public StringBuffer format(Object obj, StringBuffer toAppendTo,
