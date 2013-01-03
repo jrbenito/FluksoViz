@@ -888,8 +888,8 @@ public class FluksoVizActivity extends Activity {
 			for (int num = 0; num < series_daySUM_linkedlist.size(); num++) {
 				if (num % 2 != 0)
 					suma = suma + series_daySUM_linkedlist.get(num).intValue();
-			}
-			;
+			};
+			
 			today_avg_watt = suma / ((series_daySUM_linkedlist.size()) / 2);
 
 			int yesterday_watt = series_monthSUM_linkedlist.getLast()
@@ -918,17 +918,32 @@ public class FluksoVizActivity extends Activity {
 					+ (cost_fixedpart / 30));
 			tv_today_cost.setText(" " + numbers);
 
-			suma = 0; // getting last 7 days form the monthly readout.
+			/*
+			 * Getting last 7 days from monthly readout
+			 * 
+			 * list.size()-14 means 7 days before
+			 *
+			 */
+			//TODO calculate week and month less frequently since its update is too slow (in a daily basis)
+			suma = 0; 
 			for (int num = series_monthSUM_linkedlist.size() - 14; num < series_monthSUM_linkedlist
 					.size(); num++) {
 				if (num % 2 != 0) {
 					suma = suma + series_monthSUM_linkedlist.get(num).intValue();
 					// tv_week_avg.append(" "+ num);
 				}
-			}
-			;
+			};
+			
+			/*
+			 *  This is correct only if you take reads in hour resolution from
+			 *  the current hour to current hour 7 days before  or if you take
+			 *  reads from last 6 days to now. 
+			 *  (assuming a week completed 11:59PM yesterday)
+			 *  (last reading was today 12:00AM)
+			 */
 			// suma = suma + today_avg_watt; // plus adding what is calculated
-			// for today so far.
+											 // for today so far.
+			
 			double week_avg_watt = suma / 7;
 			tv_week_avg.setText("" + df_avg.format(week_avg_watt));
 
@@ -939,16 +954,27 @@ public class FluksoVizActivity extends Activity {
 					+ ((cost_fixedpart / 30) * 7));
 			tv_week_cost.setText(" " + numbers);
 
-			suma = 0; // getting last previous 7 days form the monthly readout.
-			for (int num = series_monthSUM_linkedlist.size() - 26; num < series_monthSUM_linkedlist
-					.size() - 12; num++) {
+			/*
+			 * Getting last previous 7 days from monthly readout
+			 * 
+			 * list.size()-28 means 14 days before
+			 * this was set to 26 and was calculating one day less related to week avg
+			 * 
+			 * list.size()-14 instead -12 to avoid double count of last day (previous week)
+			 * and fist day (this week)
+			 *
+			 */
+			//TODO calculate week and month less frequently since its update is too slow (in a daily basis)
+			suma = 0; 
+			for (int num = series_monthSUM_linkedlist.size() - 28; num < series_monthSUM_linkedlist
+					.size() - 14; num++) {
 				if (num % 2 != 0) {
 					suma = suma
 							+ series_monthSUM_linkedlist.get(num).intValue();
 					// tv_week_avg.append(" "+ num);
 				}
-			}
-			;
+			};
+			
 			double week_previous_avg_watt = suma / 7;
 
 			double week_percent = 100 * ((week_avg_watt / week_previous_avg_watt) - 1);
@@ -991,8 +1017,7 @@ public class FluksoVizActivity extends Activity {
 							+ series_monthSUM_linkedlist.get(num).intValue();
 					// tv_week_avg.append(" "+ num);
 				}
-			}
-			;
+			};
 			double month_previous_avg_watt = suma / 30;
 
 			double month_percent = 100 * ((month_avg_watt / month_previous_avg_watt) - 1);
@@ -1781,14 +1806,15 @@ public class FluksoVizActivity extends Activity {
 		HttpConnectionParams.setConnectionTimeout(httpParams, 5000);
 		HttpConnectionParams.setSoTimeout(httpParams, 5000);
 
-		Date d = new Date();
-		long moja_data = d.getTime() + (d.getTimezoneOffset() * 60 * 1000); // calculate
+		/*
+		 * Get local UTC time (now) to request data to server
+		 */
+		Date d = new Date(); // already return UTC
+		//long moja_data = d.getTime() - (d.getTimezoneOffset() * 60 * 1000); // calculate
 																			// data/time
 																			// (milliseconds)
-																			// at
-																			// UTC
-																			// ??
-		d.setTime(moja_data);
+																			// at local timzone
+		//d.setTime(moja_data);
 
 		d.setHours(00);
 		d.setSeconds(00);
