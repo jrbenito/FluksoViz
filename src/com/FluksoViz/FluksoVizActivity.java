@@ -458,12 +458,17 @@ public class FluksoVizActivity extends Activity {
 			thread_updater1s.start();
 			thread_updater2.start();
 		} else {
+			//TODO modify run_network_token_test to return status
 			run_network_token_test();
-			String threadToStart[] = {"Thread1","Thread2","Both"};
+			// Use resource or make a custom layout for AlertDialog?
+			String threadToStart[] = getResources().getStringArray(R.array.threadnames);
+			for (int i=0; i < threadToStart.length;i++) {
+				// Hard coded for test
+				threadToStart[i] = String.format(threadToStart[i], "OK ", "OK ", "OK ");
+			}
 			// Alert dialog when application starts
 			new AlertDialog.Builder(this)
 					.setTitle(R.string.nw_chk_results)
-					//.setMessage(network_checks_results)
 					.setIcon(android.R.drawable.ic_menu_agenda)
 					.setItems(threadToStart, new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int which) {

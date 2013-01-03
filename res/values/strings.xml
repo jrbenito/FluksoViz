@@ -5,69 +5,74 @@
     <string name="app_name">Flukso Viz</string>
     <string name="set_preferences">Preferences for FuksoViz</string>
 
-     <string-array name="sensor_number">
-	        <item>1 sensor</item>
-	        <item>2 sensors sum 1+2</item>
-	        <item>2 sensors diff 1&#8211;2</item>
-	        <item>3 sensors sum 1+2+3</item>
-	        
+    <string-array name="sensor_number">
+        <item>1 sensor</item>
+        <item>2 sensors sum 1+2</item>
+        <item>2 sensors diff 1&#8211;2</item>
+        <item>3 sensors sum 1+2+3</item>
     </string-array>
     <string-array name="sensor_number_val">
-	        <item>1</item>
-	        <item>2</item>
-	        <item>4</item>
-	        <item>3</item>
-	    </string-array>
-	    
-     <string-array name="api_server">
-	        <item>flukso.net</item>
-	        <item>api.mysmartgrid.de:8443</item>
-	        
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="api_server">
+        <item>flukso.net</item>
+        <item>api.mysmartgrid.de:8443</item>
     </string-array>
     <string-array name="api_server_val">
-	        <item>178.79.177.6</item>
-	        <item>api.mysmartgrid.de:8443</item>
-	        
+        <item>178.79.177.6</item>
+        <item>api.mysmartgrid.de:8443</item>
     </string-array>
-	        <string name="general_debug">General debug</string>
-	        <string name="watt_symbol">W</string>
-	        <string name="today">Today</string>
-	        <string name="kwh_symbol">KWh</string>
-	        <string name="week">Week</string>
-	        <string name="month">Month</string>
-	        <string name="nw_chk_results">Network check results:</string>
-	        <string name="run_both_th_local_remote">Run Both Threads\n Local &amp; Remote</string>
-	        <string name="run_just_local_th">Run just Local Thread</string>
-	        <string name="disabled">Disabled</string>
-	        <string name="let_me_fix_the_prefs_first">Let me fix the prefs first</string>
-	        <string name="preferences">Preferences</string>
-	        <string name="flukso_ip_address_is_wrong">LOOKS like local Flukso IP address is wrong!</string>
-	        <string name="exception">Exception</string>
-	        <string name="percent_symbol">%</string>
-	        <string name="local_flukso_http_unrechable">Local Flukso HTTP unrechable</string>
-	        <string name="no_networks_at_all">No networks at all</string>
-	        <string name="sensor_3_remote_server_api_token_wrong_">Sensor 3 Remote Server API Token wrong!</string>
-	        <string name="sensor_2_remote_server_api_ok">Sensor 2 Remote Server API OK</string>
-	        <string name="sensor_2_remote_server_api_token_wrong_">Sensor 2 Remote Server API Token wrong!</string>
-	        <string name="sensor_1_remote_server_api_ok">Sensor 1 Remote Server API OK</string>
-	        <string name="sensor_1_remote_server_api_token_wrong_">Sensor 1 Remote Server API Token wrong!</string>
-	        <string name="day">day</string>
-	        <string name="sensor_3_disabled_in_prefs">Sensor 3 disabled in prefs</string>
-	        <string name="sensor_2_disabled_in_prefs">Sensor 2 disabled in prefs</string>
-	        <string name="wifi_or_networking_enabled">Wifi or Networking enabled</string>
-	        <string name="local_flukso">Local Flukso</string>
-	        <string name="reachable">reachable</string>
-	        <string name="sensor_1_local_test_ok">Sensor 1 Local TEST OK</string>
-	        <string name="sensor_1_local_api_key_wrong">Sensor 1 local api key wrong</string>
-	        <string name="sensor_2_local_test_ok">Sensor 2 Local TEST OK</string>
-	        <string name="sensor_2_local_api_key_wrong">Sensor 2 local api key wrong</string>
-	        <string name="sensor_3_local_test_ok">Sensor 3 Local TEST OK</string>
-	        <string name="sensor_3_local_api_key_wrong">Sensor 3 local api key wrong</string>
-	        <string name="bad_ip_">bad IP?</string>
-	        <string name="arrow">Arrow</string>
-	        <string name="dashDisp">----</string>
-	        <string name="Cancel">Cancel</string>
     
+    <string name="Thread1">%1$s Local FluksoMeter</string>
+    <string name="Thread2">%2$s Remote API</string>
+    <string name="Threadboth">%3$s Both local and remote</string>
     
-    
+    <string-array name="threadnames">
+        <item>@string/Thread1</item>
+        <item>@string/Thread2</item>
+        <item>@string/Threadboth</item>
+    </string-array>
+
+    <string name="general_debug">General debug</string>
+    <string name="watt_symbol">W</string>
+    <string name="today">Today</string>
+    <string name="kwh_symbol">KWh</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="nw_chk_results">Network check results:</string>
+    <string name="run_both_th_local_remote">Run Both Threads\n Local &amp; Remote</string>
+    <string name="run_just_local_th">Run just Local Thread</string>
+    <string name="disabled">Disabled</string>
+    <string name="let_me_fix_the_prefs_first">Let me fix the prefs first</string>
+    <string name="preferences">Preferences</string>
+    <string name="flukso_ip_address_is_wrong">LOOKS like local Flukso IP address is wrong!</string>
+    <string name="exception">Exception</string>
+    <string name="percent_symbol">%</string>
+    <string name="local_flukso_http_unrechable">Local Flukso HTTP unrechable</string>
+    <string name="no_networks_at_all">No networks at all</string>
+    <string name="sensor_3_remote_server_api_token_wrong_">Sensor 3 Remote Server API Token wrong!</string>
+    <string name="sensor_2_remote_server_api_ok">Sensor 2 Remote Server API OK</string>
+    <string name="sensor_2_remote_server_api_token_wrong_">Sensor 2 Remote Server API Token wrong!</string>
+    <string name="sensor_1_remote_server_api_ok">Sensor 1 Remote Server API OK</string>
+    <string name="sensor_1_remote_server_api_token_wrong_">Sensor 1 Remote Server API Token wrong!</string>
+    <string name="day">day</string>
+    <string name="sensor_3_disabled_in_prefs">Sensor 3 disabled in prefs</string>
+    <string name="sensor_2_disabled_in_prefs">Sensor 2 disabled in prefs</string>
+    <string name="wifi_or_networking_enabled">Wifi or Networking enabled</string>
+    <string name="local_flukso">Local Flukso</string>
+    <string name="reachable">reachable</string>
+    <string name="sensor_1_local_test_ok">Sensor 1 Local TEST OK</string>
+    <string name="sensor_1_local_api_key_wrong">Sensor 1 local api key wrong</string>
+    <string name="sensor_2_local_test_ok">Sensor 2 Local TEST OK</string>
+    <string name="sensor_2_local_api_key_wrong">Sensor 2 local api key wrong</string>
+    <string name="sensor_3_local_test_ok">Sensor 3 Local TEST OK</string>
+    <string name="sensor_3_local_api_key_wrong">Sensor 3 local api key wrong</string>
+    <string name="bad_ip_">bad IP?</string>
+    <string name="arrow">Arrow</string>
+    <string name="dashDisp">----</string>
+    <string name="Cancel">Cancel</string>
+
 </resources>
