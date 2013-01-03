@@ -8,7 +8,7 @@
     <string-array name="sensor_number">
         <item>1 sensor</item>
         <item>2 sensors sum 1+2</item>
-        <item>2 sensors diff 1&#8211;2</item>
+	        <item>2 sensors diff 1&#8211;2</item>
         <item>3 sensors sum 1+2+3</item>
     </string-array>
     <string-array name="sensor_number_val">
