@@ -106,7 +106,6 @@ public class FluksoVizActivity extends Activity {
 
 	ImageView iv1, iv2, iv3;
 
-	int i;
 	int screen_width;
 	int delta_value = 0;
 	int plot1_mode = 0;
