@@ -1,5 +1,6 @@
 //   FluksoViz 
 //   Copyright (C) 2012  Maciej Eckstein sherlock@vsat.pl
+//   Copyright (C) 2013  Josenivaldo Benito Junior jrbenito@benito.qsl.br  
 //
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -1803,6 +1804,7 @@ public class FluksoVizActivity extends Activity {
 		/*
 		 * Get local UTC time (now) to request data to server
 		 */
+		//TODO verify with Bart if shall request UTC or local time (guessed UTC)
 		Date d = new Date(); // already return UTC
 		//long moja_data = d.getTime() - (d.getTimezoneOffset() * 60 * 1000); // calculate
 																			// data/time
